@@ -1,12 +1,3 @@
-import App from '../components/App'
-import Header from '../components/Header'
-import Submit from '../components/Submit'
-import PostList from '../components/PostList'
+export default () => <div>Welcome to next.js!</div>
 
-export default () => (
-  <App>
-    <Header />
-    <Submit />
-    <PostList />
-  </App>
-)
+console.log(process.env.APOLLO_URL)

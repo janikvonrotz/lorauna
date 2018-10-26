@@ -1,5 +1,6 @@
 {
-  "name": "with-apollo",
+  "name": "lorauna",
+  "description": "Next.js web application with a graphql backend.",
   "version": "2.0.0",
   "scripts": {
     "dev": "next",
@@ -7,16 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
-    "apollo-boost": "^0.1.16",
     "dotenv": "^6.1.0",
-    "graphql": "^14.0.2",
-    "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
-    "prop-types": "^15.6.2",
     "react": "^16.6.0",
-    "react-apollo": "^2.1.11",
     "react-dom": "^16.6.0"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janikvonrotz/lorauna.git"
+  },
+  "author": "Janik von Rotz (https://janikvonrotz.ch)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janikvonrotz/lorauna/issues"
+  },
+  "homepage": "https://github.com/janikvonrotz/lorauna#readme"
 }
