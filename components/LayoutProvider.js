@@ -8,6 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import JssProvider from 'react-jss/lib/JssProvider'
 import getPageContext from '../src/getPageContext'
+import App from './App'
 
 class LayoutProvider extends React.Component {
 
@@ -22,37 +23,27 @@ class LayoutProvider extends React.Component {
         if (jssStyles && jssStyles.parentNode) {
             jssStyles.parentNode.removeChild(jssStyles)
         }
-  }
+    }
 
-  render() {
-    const { Component, pageProps } = this.props
-    return (
-        <JssProvider
-          registry={this.pageContext.sheetsRegistry}
-          generateClassName={this.pageContext.generateClassName}
-        >
-            <MuiThemeProvider
-                theme={this.pageContext.theme}
-                sheetsManager={this.pageContext.sheetsManager}
+    render() {
+        const { Component, pageProps } = this.props
+        return (
+            <JssProvider
+                registry={this.pageContext.sheetsRegistry}
+                generateClassName={this.pageContext.generateClassName}
             >
-                <CssBaseline />
-                <FlexboxGrid>
-                    <AppBar position="static">
-                        <Toolbar>
-                            <IconButton color="inherit" aria-label="Menu">
-                                <MenuIcon />
-                            </IconButton>
-                            <Typography variant="h6" color="inherit">
-                                Lorauna
-                            </Typography>
-                        </Toolbar>
-                    </AppBar>
-                    {this.props.children}
-                </FlexboxGrid>
-            </MuiThemeProvider>
-        </JssProvider>
-    )
-  }
+                <MuiThemeProvider
+                    theme={this.pageContext.theme}
+                    sheetsManager={this.pageContext.sheetsManager}
+                >
+                    <CssBaseline />
+                    <App>
+                        {this.props.children}
+                    </App>
+                </MuiThemeProvider>
+            </JssProvider>
+        )
+    }
 }
 
 export default LayoutProvider
