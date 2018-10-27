@@ -1,11 +1,9 @@
-import App from '../components/App'
 import SaunaList from '../components/SaunaList'
 
 export default () => (
-    <App>
-        <div>Welcome to next.js!</div>
+    <section>
         <SaunaList />
-    </App>
+    </section>
 )
 
 console.log(process.env.APOLLO_URL)
