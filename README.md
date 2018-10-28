@@ -1,6 +1,6 @@
 # lorauna
 
-Next.js web application with a graphql backend.
+React web application with a graphql backend.
 
 ## dotenv config
 
@@ -20,4 +20,5 @@ react: React framework.
 react-apollo: Apollo graphql client react provider.  
 react-dom: React DOM integration.  
 react-scripts: Build scripts provided by create-react-app.  
+react-router-dom: Routing solution for react.  
 @material-ui/icons: Material ui icons.  
