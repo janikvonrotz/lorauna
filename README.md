@@ -14,7 +14,6 @@ APOLLO_URL=https://api.hostname.com/graphql
 
 @material-ui/core: Material ui react components.  
 apollo-boost: Apollo graphl client query engine.  
-flexboxgrid: Flexbox css template used for FlexboxGrid component.  
 graphql: Mainly used for using graphql tags in components.  
 react: React framework.  
 react-apollo: Apollo graphql client react provider.  

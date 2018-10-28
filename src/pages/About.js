@@ -1,0 +1,32 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => ({
+    root: {
+        textAlign: 'center',
+        paddingTop: theme.spacing.unit * 20,
+        paddingBottom: theme.spacing.unit * 20,
+    },
+})
+
+const About = ({classes}) => {
+
+    return (
+        <div className={classes.root}>
+            <Typography variant="h4" gutterBottom>
+                About
+            </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+                Give a short explanation about this application.
+            </Typography>
+        </div>
+    )
+}
+
+About.propTypes = {
+    classes: PropTypes.object.isRequired,
+}
+
+export default withStyles(styles)(About)
