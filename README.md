@@ -7,17 +7,17 @@ React web application with a graphql backend.
 Running the application requires a [.env file](https://github.com/motdotla/dotenv) with following environment variables:
 
 ```
-APOLLO_URL=https://api.hostname.com/graphql
+REACT_APP_APOLLO_URL=https://api.hostname.com/graphql
 ```
 
 ## dependecies
 
 @material-ui/core: Material ui react components.  
+@material-ui/icons: Material ui icons.  
 apollo-boost: Apollo graphl client query engine.  
-graphql: Mainly used for using graphql tags in components.  
+graphql: Use graphql tags within components.  
 react: React framework.  
 react-apollo: Apollo graphql client react provider.  
 react-dom: React DOM integration.  
-react-scripts: Build scripts provided by create-react-app.  
 react-router-dom: Routing solution for react.  
-@material-ui/icons: Material ui icons.  
+react-scripts: Build scripts provided by create-react-app.  

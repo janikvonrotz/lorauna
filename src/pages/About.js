@@ -11,19 +11,16 @@ const styles = theme => ({
     },
 })
 
-const About = ({classes}) => {
-
-    return (
-        <div className={classes.root}>
-            <Typography variant="h4" gutterBottom>
-                About
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-                Give a short explanation about this application.
-            </Typography>
-        </div>
-    )
-}
+const About = ({classes}) => (
+    <div className={classes.root}>
+        <Typography variant="h4" gutterBottom>
+            About
+        </Typography>
+        <Typography variant="subtitle1" gutterBottom>
+            Give a short explanation about this application.
+        </Typography>
+    </div>
+)
 
 About.propTypes = {
     classes: PropTypes.object.isRequired,

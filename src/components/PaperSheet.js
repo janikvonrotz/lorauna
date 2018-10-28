@@ -11,14 +11,11 @@ const styles = theme => ({
     },
 })
 
-const PaperSheet = ({children, classes}) => {
-
-    return (
-        <Paper className={classes.root} elevation={1}>
-            {children}
-        </Paper>
-    )
-}
+const PaperSheet = ({children, classes}) => (
+    <Paper className={classes.root} elevation={1}>
+        {children}
+    </Paper>
+)
 
 PaperSheet.propTypes = {
     classes: PropTypes.object.isRequired,

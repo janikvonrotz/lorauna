@@ -11,19 +11,16 @@ const styles = theme => ({
     },
 })
 
-const About = ({classes}) => {
-
-    return (
-        <div className={classes.root}>
-            <Typography variant="h4" gutterBottom>
-                Settings
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-                On this page you can manage the capacits settings.
-            </Typography>
-        </div>
-    )
-}
+const About = ({classes}) => (
+    <div className={classes.root}>
+        <Typography variant="h4" gutterBottom>
+            Settings
+        </Typography>
+        <Typography variant="subtitle1" gutterBottom>
+            On this page you can manage the capacits settings.
+        </Typography>
+    </div>
+)
 
 About.propTypes = {
     classes: PropTypes.object.isRequired,

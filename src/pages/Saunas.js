@@ -1,8 +1,8 @@
 import React from 'react'
 import SaunaList from '../components/SaunaList'
 
-const Index = () => (
-    <SaunaList/>
+const Saunas = () => (
+    <SaunaList />
 )
 
-export default Index
+export default Saunas

@@ -17,6 +17,9 @@ import PaperSheet from './PaperSheet'
 import About from '../pages/About'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Settings from '../pages/Settings'
+import Sauna from '../pages/Sauna'
+import Saunas from '../pages/Saunas'
+import Index from '../pages/Index'
 
 class AppRouter extends React.Component {
 
@@ -51,7 +54,7 @@ class AppRouter extends React.Component {
                             </ListItemIcon>
                             <ListItemText>Close</ListItemText>
                         </MenuItem>
-                        <Link to="/">
+                        <Link to="/saunas">
                             <MenuItem onClick={this.toggleDrawer}>
                                 <ListItemIcon>
                                     <HomeIcon />
@@ -76,9 +79,12 @@ class AppRouter extends React.Component {
                             </MenuItem>
                         </Link>
                     </Drawer>
-                    <PaperSheet>                        
+                    <PaperSheet>
+                        <Route exact path="/" component={Index} />
+                        <Route path="/saunas" component={Saunas} />
                         <Route path="/about" component={About} />
                         <Route path="/settings" component={Settings} />
+                        <Route path="/sauna/:id" component={Sauna} />
                     </PaperSheet>
                 </FlexboxGrid>
             </Router>
