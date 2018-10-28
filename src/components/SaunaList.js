@@ -6,19 +6,20 @@ import SaunaListItem from './SaunaListItem'
 import Error from './Error'
 import Loading from './Loading'
 
+const ALL_SAUNAS = gql`
+{
+    allSaunas {
+        name
+        max_seats
+        current_seats
+        _id
+        capacity_message
+    }
+}
+`
+
 const SaunaList = () => (
-    <Query
-        query={gql`
-            {
-                allSaunas {
-                    name
-                    max_seats
-                    current_seats
-                    _id
-                }
-            }
-        `}
-    >
+    <Query query={ALL_SAUNAS}>
         {({ loading, error, data }) => {
 
             if (loading) return <Loading />
@@ -30,7 +31,7 @@ const SaunaList = () => (
                         Saunas
                     </Typography>
                     <Typography variant="body1" gutterBottom>
-                        Hier können die Saunalandschaften verwaltet werden.
+                        Verwaltung der Saunalandschaften.
                     </Typography>
                     {data.allSaunas.map((sauna) => (
                         <SaunaListItem key={sauna._id} sauna={sauna} />

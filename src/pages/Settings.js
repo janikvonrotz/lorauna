@@ -17,7 +17,7 @@ const About = ({classes}) => (
             Settings
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-            On this page you can manage the capacits settings.
+            On this page you can manage the capacity settings.
         </Typography>
     </div>
 )

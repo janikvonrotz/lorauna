@@ -10,7 +10,6 @@ import gql from "graphql-tag"
 import { Mutation } from 'react-apollo'
 import { Link } from 'react-router-dom'
 import Snackbar from '@material-ui/core/Snackbar';
-import green from '@material-ui/core/colors/green';
 
 const styles = theme => ({
     button: {
@@ -26,6 +25,18 @@ const CREATE_VISITOR = gql`
     }
 `
 
+const ALL_SAUNAS = gql`
+{
+    allSaunas {
+        name
+        max_seats
+        current_seats
+        _id
+        capacity_message
+    }
+}
+`
+
 const SaunaListItem = ({ sauna, classes }) => (
     <div>
         <Typography variant="h4">
@@ -34,7 +45,10 @@ const SaunaListItem = ({ sauna, classes }) => (
         <Typography variant="body1" gutterBottom>
             Auslastung: {sauna.current_seats}/{sauna.max_seats}
         </Typography>
-        <Mutation mutation={CREATE_VISITOR} variables={{ value: 1, sauna_id: sauna._id }}>
+        <Typography variant="body1" gutterBottom>
+            Statusnachricht: {sauna.capacity_message}
+        </Typography>
+        <Mutation mutation={CREATE_VISITOR} variables={{ value: 1, sauna_id: sauna._id }} refetchQueries={[{query: ALL_SAUNAS}]}>
             {(createVisitor, { data }) => (
                 <span>
                     <Button variant="fab" color="primary" aria-label="Add" className={classes.button} onClick={() => createVisitor()}>
@@ -52,7 +66,7 @@ const SaunaListItem = ({ sauna, classes }) => (
                 </span>
             )}
         </Mutation>
-        <Mutation mutation={CREATE_VISITOR} variables={{ value: -1, sauna_id: sauna._id }}>
+        <Mutation mutation={CREATE_VISITOR} variables={{ value: -1, sauna_id: sauna._id }} refetchQueries={[{query: ALL_SAUNAS}]}>
             {(createVisitor, { data }) => (
                 <span>
                     <Button variant="fab" color="secondary" aria-label="Remove" className={classes.button} onClick={() => createVisitor()}>
@@ -65,7 +79,6 @@ const SaunaListItem = ({ sauna, classes }) => (
                         }}
                         open={Boolean(data)}
                         autoHideDuration={6000}
-                        onClose={console.log("close")}
                         message="Visitor removed!"
                     />
                 </span>

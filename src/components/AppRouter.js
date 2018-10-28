@@ -11,6 +11,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import CloseIcon from '@material-ui/icons/Close'
 import HomeIcon from '@material-ui/icons/Home'
+import HistoryIcon from '@material-ui/icons/History'
 import SettingsIcon from '@material-ui/icons/Settings'
 import InfoIcon from '@material-ui/icons/Info'
 import PaperSheet from './PaperSheet'
@@ -19,6 +20,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Settings from '../pages/Settings'
 import Sauna from '../pages/Sauna'
 import Saunas from '../pages/Saunas'
+import Visitors from '../pages/Visitors'
 import Index from '../pages/Index'
 
 class AppRouter extends React.Component {
@@ -62,6 +64,14 @@ class AppRouter extends React.Component {
                                 <ListItemText>Saunas</ListItemText>
                             </MenuItem>
                         </Link>
+                        <Link to="/visitors">
+                            <MenuItem onClick={this.toggleDrawer}>
+                                <ListItemIcon>
+                                    <HistoryIcon />
+                                </ListItemIcon>
+                                <ListItemText>Visitors</ListItemText>
+                            </MenuItem>
+                        </Link>
                         <Link to="/settings">
                             <MenuItem onClick={this.toggleDrawer}>
                                 <ListItemIcon>
@@ -82,6 +92,7 @@ class AppRouter extends React.Component {
                     <PaperSheet>
                         <Route exact path="/" component={Index} />
                         <Route path="/saunas" component={Saunas} />
+                        <Route path="/visitors" component={Visitors} />
                         <Route path="/about" component={About} />
                         <Route path="/settings" component={Settings} />
                         <Route path="/sauna/:id" component={Sauna} />
