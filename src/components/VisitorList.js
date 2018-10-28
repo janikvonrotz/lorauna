@@ -1,7 +1,6 @@
 import React from 'react'
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
-import Typography from '@material-ui/core/Typography'
 import Error from './Error'
 import Loading from './Loading'
 import List from '@material-ui/core/List'
@@ -30,23 +29,15 @@ const VisitorList = () => (
             if (loading) return <Loading />
             if (error) return <Error />
 
-            return (
-                <div>
-                    <Typography variant="h2">
-                        Besucher
-                    </Typography>
-                    <Typography variant="body1" gutterBottom>
-                        Liste aller Sauna Ein- und Ausgänge.
-                    </Typography>
-                    <List>
-                        {data.allVisitors.map((visitor) => (
-                            <ListItem key={visitor._id}>
-                                {visitor.value === 1 ? <AddCircleIcon /> : <RemoveCircleIcon />}
-                                <ListItemText primary={(new Date(visitor.created)).toString()} secondary={visitor.sauna.name} />
-                            </ListItem>
-                        ))}
-                    </List>
-                </div>
+            return (                    
+                <List>
+                    {data.allVisitors.map((visitor) => (
+                        <ListItem key={visitor._id}>
+                            {visitor.value === 1 ? <AddCircleIcon /> : <RemoveCircleIcon />}
+                            <ListItemText primary={(new Date(visitor.created)).toString()} secondary={visitor.sauna.name} />
+                        </ListItem>
+                    ))}
+                </List>
             )
         }}
     </Query>

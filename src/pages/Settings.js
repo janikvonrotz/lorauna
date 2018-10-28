@@ -2,23 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
+import CapacityMessageList from '../components/CapacityMessageList'
 
 const styles = theme => ({
     root: {
-        textAlign: 'center',
-        paddingTop: theme.spacing.unit * 20,
-        paddingBottom: theme.spacing.unit * 20,
     },
 })
 
 const About = ({classes}) => (
     <div className={classes.root}>
         <Typography variant="h4" gutterBottom>
-            Settings
+            Einstellungen
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-            On this page you can manage the capacity settings.
+            Auf dieser Seite können Sie die Kapazitätsmeldungen verwalten.
         </Typography>
+        <CapacityMessageList />
     </div>
 )
 

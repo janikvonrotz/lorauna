@@ -5,16 +5,16 @@ import Typography from '@material-ui/core/Typography'
 import Error from './Error'
 import Loading from './Loading'
 
+const SAUNA = gql`
+query sauna($id: String) {
+    sauna(id: $id) {
+        name
+    }
+}
+`
+
 const SaunaEdit = ({id}) => (
-    <Query variables={{id}}
-        query={gql`
-            query sauna($id: String) {
-                sauna(id: $id) {
-                    name
-                }
-            }
-        `}
-    >
+    <Query variables={{id}} query={SAUNA}>
         {({ loading, error, data }) => {
 
             if (loading) return <Loading />
