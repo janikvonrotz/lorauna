@@ -14,7 +14,7 @@
     "react-scripts": "2.0.5"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -27,15 +27,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/janikvonrotz/lorauna.git"
-  },
-  "author": "Janik von Rotz (https://janikvonrotz.ch)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/janikvonrotz/lorauna/issues"
-  },
-  "homepage": "https://github.com/janikvonrotz/lorauna#readme"
+  ]
 }
