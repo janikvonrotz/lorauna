@@ -1,32 +1,24 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
 import Typography from '@material-ui/core/Typography'
 import Error from './Error'
 import Loading from './Loading'
+import { CAPACITY_MESSAGE } from '../lib/Queries'
 
-const SAUNA = gql`
-query sauna($id: String) {
-    sauna(id: $id) {
-        name
-    }
-}
-`
-
-const SaunaEdit = ({id}) => (
-    <Query variables={{id}} query={SAUNA}>
+const CapacityMessageEdit = ({id}) => (
+    <Query variables={{id}} query={CAPACITY_MESSAGE}>
         {({ loading, error, data }) => {
 
             if (loading) return <Loading />
             if (error) return <Error />
 
-            return (
+            return (                 
                 <Typography variant="body1" gutterBottom>
-                    {data.sauna.name}
+                    {data.capacityMessage.message}
                 </Typography>
             )
         }}
     </Query>
 )
 
-export default SaunaEdit
+export default CapacityMessageEdit

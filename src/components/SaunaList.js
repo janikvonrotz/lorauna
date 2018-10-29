@@ -1,6 +1,6 @@
 import React from 'react'
-import { Query } from "react-apollo"
-import gql from "graphql-tag"
+import { Query } from 'react-apollo'
+import gql from 'graphql-tag'
 import SaunaListItem from './SaunaListItem'
 import Error from './Error'
 import Loading from './Loading'

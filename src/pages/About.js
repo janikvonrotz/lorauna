@@ -13,7 +13,7 @@ const styles = theme => ({
 
 const About = ({classes}) => (
     <div className={classes.root}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h3" gutterBottom>
             About
         </Typography>
         <Typography variant="subtitle1" gutterBottom>

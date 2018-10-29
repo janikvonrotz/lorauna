@@ -22,6 +22,7 @@ import Sauna from '../pages/Sauna'
 import Saunas from '../pages/Saunas'
 import Visitors from '../pages/Visitors'
 import Index from '../pages/Index'
+import CapacityMessage from '../pages/CapacityMessage'
 
 class AppRouter extends React.Component {
 
@@ -92,10 +93,11 @@ class AppRouter extends React.Component {
                     <PaperSheet>
                         <Route exact path="/" component={Index} />
                         <Route path="/saunas" component={Saunas} />
+                        <Route path="/sauna/:id" component={Sauna} />
                         <Route path="/visitors" component={Visitors} />
                         <Route path="/about" component={About} />
                         <Route path="/settings" component={Settings} />
-                        <Route path="/sauna/:id" component={Sauna} />
+                        <Route path="/capacity_message/:id" component={CapacityMessage} />
                     </PaperSheet>
                 </FlexboxGrid>
             </Router>

@@ -1,11 +1,13 @@
 import React from 'react'
-import { Query } from "react-apollo"
-import gql from "graphql-tag"
+import { Query } from 'react-apollo'
+import gql from 'graphql-tag'
 import Error from './Error'
 import Loading from './Loading'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
+import { Link } from 'react-router-dom'
+
 
 const ALL_CAPACITY_MESSAGES = gql`
 {
@@ -27,9 +29,11 @@ const CapacityMessagesList = () => (
             return (
                 <List>
                     {data.allCapacityMessages.map((capacityMessage) => (
-                        <ListItem key={capacityMessage._id}>
-                            <ListItemText primary={capacityMessage.message} secondary={`${capacityMessage.percentage}% Nachricht`} />
-                        </ListItem>
+                        <Link key={capacityMessage._id} to={`/capacity_message/${capacityMessage._id}`}>
+                            <ListItem>
+                                <ListItemText primary={capacityMessage.message} secondary={`${capacityMessage.percentage}% Nachricht`} />
+                            </ListItem>
+                        </Link>
                     ))}
                 </List>
             )

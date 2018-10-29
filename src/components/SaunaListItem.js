@@ -5,16 +5,20 @@ import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
-import EditIcon from '@material-ui/icons/Edit'
-import gql from "graphql-tag"
+import gql from 'graphql-tag'
 import { Mutation } from 'react-apollo'
 import { Link } from 'react-router-dom'
-import Snackbar from '@material-ui/core/Snackbar';
+import Snackbar from '@material-ui/core/Snackbar'
+import Divider from '@material-ui/core/Divider'
 
 const styles = theme => ({
     button: {
         margin: theme.spacing.unit,
     },
+    divider: {
+        marginTop:  theme.spacing.unit,
+        marginBottom:  theme.spacing.unit,
+    }
 })
 
 const CREATE_VISITOR = gql`
@@ -39,14 +43,23 @@ const ALL_SAUNAS = gql`
 
 const SaunaListItem = ({ sauna, classes }) => (
     <div>
+        <Divider light className={classes.divider} />
         <Typography variant="h4">
             {sauna.name}
         </Typography>
+        <Link to={`/sauna/${sauna._id}`}>
+            <Typography variant="body1" gutterBottom>
+                Bearbeiten
+            </Typography>
+        </Link>
         <Typography variant="body1" gutterBottom>
             Auslastung: {sauna.current_seats}/{sauna.max_seats}
         </Typography>
         <Typography variant="body1" gutterBottom>
             Statusnachricht: {sauna.capacity_message}
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+            Ein- und Ausgang der Besucher registrieren:
         </Typography>
         <Mutation mutation={CREATE_VISITOR} variables={{ value: 1, sauna_id: sauna._id }} refetchQueries={[{query: ALL_SAUNAS}]}>
             {(createVisitor, { data }) => (
@@ -84,11 +97,6 @@ const SaunaListItem = ({ sauna, classes }) => (
                 </span>
             )}
         </Mutation>
-        <Link to={`/sauna/${sauna._id}`}>
-            <Button variant="fab" color="secondary" aria-label="Edit" className={classes.button}>
-                <EditIcon fontSize="small" />
-            </Button>
-        </Link>
     </div>
 )
 

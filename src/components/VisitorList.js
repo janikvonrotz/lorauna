@@ -1,6 +1,6 @@
 import React from 'react'
-import { Query } from "react-apollo"
-import gql from "graphql-tag"
+import { Query } from 'react-apollo'
+import gql from 'graphql-tag'
 import Error from './Error'
 import Loading from './Loading'
 import List from '@material-ui/core/List'
