@@ -1,21 +1,9 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
 import SaunaListItem from './SaunaListItem'
 import Error from './Error'
 import Loading from './Loading'
-
-const ALL_SAUNAS = gql`
-{
-    allSaunas {
-        name
-        max_seats
-        current_seats
-        _id
-        capacity_message
-    }
-}
-`
+import { ALL_SAUNAS } from '../lib/queries'
 
 const SaunaList = () => (
     <Query query={ALL_SAUNAS}>

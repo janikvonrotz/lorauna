@@ -3,7 +3,7 @@ import { Query } from 'react-apollo'
 import Typography from '@material-ui/core/Typography'
 import Error from './Error'
 import Loading from './Loading'
-import { CAPACITY_MESSAGE } from '../lib/Queries'
+import { CAPACITY_MESSAGE } from '../lib/queries'
 
 const CapacityMessageEdit = ({id}) => (
     <Query variables={{id}} query={CAPACITY_MESSAGE}>

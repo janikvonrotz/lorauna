@@ -1,6 +1,5 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
 import Error from './Error'
 import Loading from './Loading'
 import List from '@material-ui/core/List'
@@ -8,19 +7,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle'
-
-const ALL_VISITORS = gql`
-{
-    allVisitors{
-        _id
-        value
-        created
-        sauna {
-            name
-        }
-    }
-}
-`
+import { ALL_VISITORS } from '../lib/queries'
 
 const VisitorList = () => (
     <Query query={ALL_VISITORS}>

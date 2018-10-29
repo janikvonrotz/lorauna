@@ -1,23 +1,12 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
 import Error from './Error'
 import Loading from './Loading'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import { Link } from 'react-router-dom'
-
-
-const ALL_CAPACITY_MESSAGES = gql`
-{
-    allCapacityMessages{
-        _id
-        percentage
-        message
-    }
-}
-`
+import { ALL_CAPACITY_MESSAGES } from '../lib/queries'
 
 const CapacityMessagesList = () => (
     <Query query={ALL_CAPACITY_MESSAGES}>
