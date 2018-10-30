@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import AppRouter from './components/AppRouter'
 import Apollo from './components/Apollo'
+import Theme from './components/Theme'
 
 class App extends Component {
     render() {
@@ -9,7 +10,9 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <Apollo>
-                        <AppRouter />
+                        <Theme>
+                            <AppRouter />
+                        </Theme>
                     </Apollo>
                 </header>
             </div>

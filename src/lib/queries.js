@@ -20,6 +20,7 @@ const SAUNA = gql`
 query sauna($id: String) {
     sauna(id: $id) {
         name
+        max_seats
     }
 }
 `
