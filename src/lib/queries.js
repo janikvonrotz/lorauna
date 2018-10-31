@@ -3,6 +3,7 @@ import gql from 'graphql-tag'
 const CAPACITY_MESSAGE = gql`
 query capacityMessage($id: String) {
     capacityMessage(id: $id) {
+        _id
         message
     }
 }
@@ -19,6 +20,7 @@ const ALL_CAPACITY_MESSAGES = gql`
 const SAUNA = gql`
 query sauna($id: String) {
     sauna(id: $id) {
+        _id
         name
         max_seats
     }
