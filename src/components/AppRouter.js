@@ -23,6 +23,7 @@ import Saunas from '../pages/Saunas'
 import Visitors from '../pages/Visitors'
 import Index from '../pages/Index'
 import CapacityMessage from '../pages/CapacityMessage'
+import Notification from './Notification'
 
 class AppRouter extends React.Component {
 
@@ -40,6 +41,7 @@ class AppRouter extends React.Component {
         return (
             <Router>
                 <FlexboxGrid>
+                    <Notification />
                     <AppBar position="static">
                         <Toolbar>
                             <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer}>

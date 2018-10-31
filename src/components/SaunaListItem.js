@@ -7,7 +7,6 @@ import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
 import { Mutation } from 'react-apollo'
 import { Link } from 'react-router-dom'
-import Snackbar from '@material-ui/core/Snackbar'
 import Divider from '@material-ui/core/Divider'
 import { ALL_SAUNAS } from '../lib/queries'
 import { CREATE_VISITOR } from '../lib/mutations'
@@ -43,40 +42,46 @@ const SaunaListItem = ({ sauna, classes }) => (
             Ein- und Ausgang der Besucher registrieren:
         </Typography>
         <Mutation mutation={CREATE_VISITOR} variables={{ value: 1, sauna_id: sauna._id }} refetchQueries={[{query: ALL_SAUNAS}]}>
-            {(createVisitor, { data }) => (
-                <span>
-                    <Button variant="fab" color="primary" aria-label="Add" className={classes.button} onClick={() => createVisitor()}>
+            {(createVisitor, { data, client }) => {
+
+                if(data){
+                    client.writeData({ data: { notification: "Visitor added", notification_id: data.createVisitor._id } })
+                }
+
+                return (
+                    <Button 
+                        variant="fab"
+                        color="primary"
+                        aria-label="Hinzufügen"
+                        className={classes.button}
+                        onClick={() => createVisitor()
+                    }>
                         <AddIcon fontSize="small" />
                     </Button>
-                    <Snackbar
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'center',
-                        }}
-                        open={Boolean(data)}
-                        autoHideDuration={6000}
-                        message="Visitor added!"
-                    />
-                </span>
-            )}
+                )
+            }}
         </Mutation>
         <Mutation mutation={CREATE_VISITOR} variables={{ value: -1, sauna_id: sauna._id }} refetchQueries={[{query: ALL_SAUNAS}]}>
-            {(createVisitor, { data }) => (
-                <span>
-                    <Button variant="fab" color="secondary" aria-label="Remove" className={classes.button} onClick={() => createVisitor()}>
+            {(createVisitor, { data, client }) => {
+                
+                console.log(data)
+
+                if(data){
+                    client.writeData({ data: { notification: "Visitor removed", notification_id: data.createVisitor._id } })
+                }
+
+                return (
+                    <Button 
+                        variant="fab"
+                        color="secondary"
+                        aria-label="Entfernen"
+                        className={classes.button}
+                        onClick={() => createVisitor()}
+                    >
                         <RemoveIcon fontSize="small" />
                     </Button>
-                    <Snackbar
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'center',
-                        }}
-                        open={Boolean(data)}
-                        autoHideDuration={6000}
-                        message="Visitor removed!"
-                    />
-                </span>
-            )}
+                )
+            }}
         </Mutation>
     </div>
 )

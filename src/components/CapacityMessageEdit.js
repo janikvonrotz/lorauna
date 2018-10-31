@@ -65,11 +65,24 @@ class CapacityMessageEdit extends React.Component {
                 />
                 <br />
                 <Mutation mutation={UPDATE_CAPACITY_MESSAGE} variables={{id: capacityMessage._id, message: message }} refetchQueries={[{query: ALL_CAPACITY_MESSAGES}]}>
-                {(updateCapacityMessage, { data }) => (
-                    <Button variant="contained" color="primary" className={classes.button} onClick={() => updateCapacityMessage()}>
-                        Speichern
-                    </Button>
-                )}
+                {(updateCapacityMessage, { data, client }) => {
+
+                    if(data){
+                        client.writeData({ data: { notification: "Nachricht gespeichert", notification_id: capacityMessage._id } })
+                    }
+
+                   return (
+                        <Link to="/settings">
+                            <Button 
+                                variant="contained"
+                                color="primary" className={classes.button}
+                                onClick={() => updateCapacityMessage()}
+                            >
+                                Speichern
+                            </Button>
+                        </Link>
+                    )
+                }}
                 </Mutation>
                 <Link to="/settings">
                     <Button variant="contained" color="secondary" className={classes.button}>

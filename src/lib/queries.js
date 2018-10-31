@@ -50,10 +50,18 @@ const ALL_VISITORS = gql`
 }
 `
 
+const NOTIFICATION = gql`
+{
+    notification @client
+    notification_id @client
+}
+`
+
 export { 
     CAPACITY_MESSAGE,
     ALL_CAPACITY_MESSAGES,
     SAUNA,
     ALL_SAUNAS,
     ALL_VISITORS,
+    NOTIFICATION,
 }

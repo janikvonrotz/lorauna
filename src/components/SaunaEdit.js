@@ -74,11 +74,26 @@ class SaunaEdit extends React.Component {
                 />
                 <br />
                 <Mutation mutation={UPDATE_SAUNA} variables={{id: sauna._id, name: name, max_seats: Number(max_seats) }} refetchQueries={[{query: ALL_SAUNAS}]}>
-                {(updateSauna, { data }) => (
-                    <Button variant="contained" color="primary" className={classes.button} onClick={() => updateSauna()}>
-                        Speichern
-                    </Button>
-                )}
+                {(updateSauna, { data, client }) => {
+
+                    if(data){
+                        client.writeData({ data: { notification: "Nachricht gespeichert", notification_id: sauna._id } })
+                    }
+
+                   return (
+                        <Link to="/saunas">
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={() => updateSauna()}
+                            >
+                                Speichern
+                            </Button>
+                        </Link>
+                    )
+
+                }}
                 </Mutation>
                 <Link to="/saunas">
                     <Button variant="contained" color="secondary" className={classes.button}>
