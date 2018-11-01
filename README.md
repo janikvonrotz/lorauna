@@ -12,7 +12,7 @@ Running the application requires a [.env file](https://github.com/motdotla/doten
 REACT_APP_APOLLO_URL=https://api.hostname.com/graphql
 ```
 
-## dependecies
+## dependencies
 
 @material-ui/core: Material ui react components.  
 @material-ui/icons: Material ui icons.  
