@@ -2,23 +2,15 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-import AddIcon from '@material-ui/icons/Add'
-import RemoveIcon from '@material-ui/icons/Remove'
-import { Mutation } from 'react-apollo'
 import { Link } from 'react-router-dom'
 import Divider from '@material-ui/core/Divider'
-import { ALL_SAUNAS } from '../lib/queries'
-import { CREATE_VISITOR } from '../lib/mutations'
+import SaunaVisitorButtons from './SaunaVisitorButtons'
 
 const styles = theme => ({
-    button: {
-        margin: theme.spacing.unit,
-    },
     divider: {
         marginTop:  theme.spacing.unit,
         marginBottom:  theme.spacing.unit,
-    }
+    },
 })
 
 const SaunaListItem = ({ sauna, classes }) => (
@@ -41,48 +33,7 @@ const SaunaListItem = ({ sauna, classes }) => (
         <Typography variant="body1" gutterBottom>
             Ein- und Ausgang der Besucher registrieren:
         </Typography>
-        <Mutation mutation={CREATE_VISITOR} variables={{ value: 1, sauna_id: sauna._id }} refetchQueries={[{query: ALL_SAUNAS}]}>
-            {(createVisitor, { data, client }) => {
-
-                if(data){
-                    client.writeData({ data: { notification: "Visitor added", notification_id: data.createVisitor._id } })
-                }
-
-                return (
-                    <Button 
-                        variant="fab"
-                        color="primary"
-                        aria-label="Hinzufügen"
-                        className={classes.button}
-                        onClick={() => createVisitor()
-                    }>
-                        <AddIcon fontSize="small" />
-                    </Button>
-                )
-            }}
-        </Mutation>
-        <Mutation mutation={CREATE_VISITOR} variables={{ value: -1, sauna_id: sauna._id }} refetchQueries={[{query: ALL_SAUNAS}]}>
-            {(createVisitor, { data, client }) => {
-                
-                console.log(data)
-
-                if(data){
-                    client.writeData({ data: { notification: "Visitor removed", notification_id: data.createVisitor._id } })
-                }
-
-                return (
-                    <Button 
-                        variant="fab"
-                        color="secondary"
-                        aria-label="Entfernen"
-                        className={classes.button}
-                        onClick={() => createVisitor()}
-                    >
-                        <RemoveIcon fontSize="small" />
-                    </Button>
-                )
-            }}
-        </Mutation>
+        <SaunaVisitorButtons sauna={sauna} />
     </div>
 )
 

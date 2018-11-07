@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import { UPDATE_SAUNA } from '../lib/mutations'
 import { Mutation } from 'react-apollo'
+import { ObjectId } from '../lib/helpers'
 
 const styles = theme => ({
     textField: {
@@ -74,10 +75,10 @@ class SaunaEdit extends React.Component {
                 />
                 <br />
                 <Mutation mutation={UPDATE_SAUNA} variables={{id: sauna._id, name: name, max_seats: Number(max_seats) }} refetchQueries={[{query: ALL_SAUNAS}]}>
-                {(updateSauna, { data, client }) => {
+                {(updateSauna, { data, errors, client }) => {
 
                     if(data){
-                        client.writeData({ data: { notification: "Nachricht gespeichert", notification_id: sauna._id } })
+                        client.writeData({ data: { notification: "Sauna gespeichert", notification_id: ObjectId() } })
                     }
 
                    return (

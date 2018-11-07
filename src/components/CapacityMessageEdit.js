@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import { UPDATE_CAPACITY_MESSAGE } from '../lib/mutations'
 import { Mutation } from 'react-apollo'
+import { ObjectId } from '../lib/helpers';
 
 const styles = theme => ({
     textField: {
@@ -68,7 +69,7 @@ class CapacityMessageEdit extends React.Component {
                 {(updateCapacityMessage, { data, client }) => {
 
                     if(data){
-                        client.writeData({ data: { notification: "Nachricht gespeichert", notification_id: capacityMessage._id } })
+                        client.writeData({ data: { notification: "Nachricht gespeichert", notification_id: ObjectId() } })
                     }
 
                    return (

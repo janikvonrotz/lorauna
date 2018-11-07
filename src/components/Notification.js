@@ -29,8 +29,6 @@ class Notification extends React.Component {
             <Query query={NOTIFICATION}>
             {({ data }) => {
 
-                console.log(data)
-
                 if(data.notification && data.notification_id !== this.state.notification_id) {
                     this.setState({
                         open: true,
