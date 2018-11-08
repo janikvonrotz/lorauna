@@ -49,7 +49,18 @@ const ALL_VISITORS = gql`
     }
 }
 `
-
+const ALL_TEMPERATURES = gql`
+{
+    allTemperatures {
+        _id
+        value
+        created
+        sauna {
+            name
+        }
+    }
+}
+`
 const NOTIFICATION = gql`
 {
     notification @client
@@ -64,4 +75,5 @@ export {
     ALL_SAUNAS,
     ALL_VISITORS,
     NOTIFICATION,
+    ALL_TEMPERATURES,
 }

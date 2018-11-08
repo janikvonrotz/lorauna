@@ -17,7 +17,7 @@ const About = ({classes}) => (
             About
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-            Give a short explanation about this application.
+            Besucherverwaltung für die Sauna Lorrainebad.
         </Typography>
     </div>
 )

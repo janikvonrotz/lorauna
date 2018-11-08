@@ -11,6 +11,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import CloseIcon from '@material-ui/icons/Close'
 import HomeIcon from '@material-ui/icons/Home'
+import ToysIcon from '@material-ui/icons/Toys'
 import HistoryIcon from '@material-ui/icons/History'
 import SettingsIcon from '@material-ui/icons/Settings'
 import InfoIcon from '@material-ui/icons/Info'
@@ -24,6 +25,7 @@ import Visitors from '../pages/Visitors'
 import Index from '../pages/Index'
 import CapacityMessage from '../pages/CapacityMessage'
 import Notification from './Notification'
+import Temperatures from '../pages/Temperatures'
 
 class AppRouter extends React.Component {
 
@@ -75,6 +77,14 @@ class AppRouter extends React.Component {
                                 <ListItemText>Visitors</ListItemText>
                             </MenuItem>
                         </Link>
+                        <Link to="/temperatures">
+                            <MenuItem onClick={this.toggleDrawer}>
+                                <ListItemIcon>
+                                    <ToysIcon />
+                                </ListItemIcon>
+                                <ListItemText>Temperatures</ListItemText>
+                            </MenuItem>
+                        </Link>
                         <Link to="/settings">
                             <MenuItem onClick={this.toggleDrawer}>
                                 <ListItemIcon>
@@ -97,6 +107,7 @@ class AppRouter extends React.Component {
                         <Route path="/saunas" component={Saunas} />
                         <Route path="/sauna/:id" component={Sauna} />
                         <Route path="/visitors" component={Visitors} />
+                        <Route path="/temperatures" component={Temperatures} />
                         <Route path="/about" component={About} />
                         <Route path="/settings" component={Settings} />
                         <Route path="/capacity_message/:id" component={CapacityMessage} />
