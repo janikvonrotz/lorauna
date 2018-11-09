@@ -23,8 +23,19 @@ const TemperatureList = () => (
             return null
         })
 
+        let options = {
+            scales: {
+                yAxes: [{      
+                    stacked: true,
+                     ticks: {
+                        stepSize: 10,
+                    }      
+                }]
+            }
+        }
+
         return (
-            <LineChart data={chartData} discrete={true} />
+            <LineChart data={chartData} library={options} />
         )
     }}
 </Query>
