@@ -8,7 +8,7 @@ const Visitors = () => (
             Besucher
         </Typography>
         <Typography variant="body1" gutterBottom>
-            Liste aller Sauna Ein- und Ausgänge.
+            Visualisierung der neusten Besucherzahlen.
         </Typography>
         <VisitorList />
     </div>

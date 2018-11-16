@@ -1,5 +1,9 @@
 import React from 'react'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import ReactChartkick from 'react-chartkick'
+import Chart from 'chart.js'
+
+ReactChartkick.addAdapter(Chart)
 
 const theme = createMuiTheme({
     typography: {

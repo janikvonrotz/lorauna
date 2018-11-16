@@ -14,7 +14,7 @@ const styles = theme => ({
 const About = ({classes}) => (
     <div className={classes.root}>
         <Typography variant="h3" gutterBottom>
-            About
+            Über
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
             Besucherverwaltung für die Sauna Lorrainebad.

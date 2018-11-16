@@ -74,7 +74,7 @@ class AppRouter extends React.Component {
                                 <ListItemIcon>
                                     <HistoryIcon />
                                 </ListItemIcon>
-                                <ListItemText>Visitors</ListItemText>
+                                <ListItemText>Besucher</ListItemText>
                             </MenuItem>
                         </Link>
                         <Link to="/temperatures">
@@ -82,7 +82,7 @@ class AppRouter extends React.Component {
                                 <ListItemIcon>
                                     <ToysIcon />
                                 </ListItemIcon>
-                                <ListItemText>Temperatures</ListItemText>
+                                <ListItemText>Temperaturen</ListItemText>
                             </MenuItem>
                         </Link>
                         <Link to="/settings">
@@ -90,7 +90,7 @@ class AppRouter extends React.Component {
                                 <ListItemIcon>
                                     <SettingsIcon />
                                 </ListItemIcon>
-                                <ListItemText>Settings</ListItemText>
+                                <ListItemText>Einstellungen</ListItemText>
                             </MenuItem>
                             </Link>
                         <Link to="/about">
@@ -98,7 +98,7 @@ class AppRouter extends React.Component {
                                 <ListItemIcon>
                                     <InfoIcon />
                                 </ListItemIcon>
-                                <ListItemText>About</ListItemText>
+                                <ListItemText>Über</ListItemText>
                             </MenuItem>
                         </Link>
                     </Drawer>

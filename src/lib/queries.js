@@ -38,20 +38,21 @@ const ALL_SAUNAS = gql`
 }
 `
 const ALL_VISITORS = gql`
-{
-    allVisitors{
+query allVisitors($limit: Int) {
+    allVisitors(limit: $limit) {
         _id
         value
         created
         sauna {
             name
         }
+        current_seats
     }
 }
 `
 const ALL_TEMPERATURES = gql`
-{
-    allTemperatures {
+query allTemperatures($limit: Int) {
+    allTemperatures(limit: $limit) {
         _id
         value
         created

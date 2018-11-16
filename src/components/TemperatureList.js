@@ -3,10 +3,7 @@ import { Query } from 'react-apollo'
 import { ALL_TEMPERATURES } from '../lib/queries'
 import Error from './Error'
 import Loading from './Loading'
-import ReactChartkick, { LineChart } from 'react-chartkick'
-import Chart from 'chart.js'
-
-ReactChartkick.addAdapter(Chart)
+import { LineChart } from 'react-chartkick'
 
 const TemperatureList = () => (
     <Query query={ALL_TEMPERATURES}>
