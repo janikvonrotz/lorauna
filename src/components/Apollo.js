@@ -6,9 +6,6 @@ const client = new ApolloClient({
 	uri: process.env.REACT_APP_APOLLO_URL || "http://localhost:4000/graphql",
 	clientState: {
 		resolvers: {},
-	},
-	fetchOptions: {
-		mode: 'no-cors',
 	}
 })
 
