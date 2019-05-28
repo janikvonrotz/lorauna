@@ -3,7 +3,7 @@ import React from 'react'
 import { ApolloProvider } from 'react-apollo'
 
 const client = new ApolloClient({
-	uri: process.env.REACT_APP_APOLLO_URL || "http://localhost:4000/graphql",
+	uri: process.env.REACT_APP_APOLLO_URL || "http://localhost:3000/graphql",
 	clientState: {
 		resolvers: {},
 	}
