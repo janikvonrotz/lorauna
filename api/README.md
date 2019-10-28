@@ -12,7 +12,7 @@ MONGO_URL=mongodb://username:password@hostname.com:port/database
 
 They can be provided with a [.env file](https://github.com/motdotla/dotenv).
 
-## Changelog
+# Changelog
 
 All notable changes to this project will be documented in this file.
 

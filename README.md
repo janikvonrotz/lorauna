@@ -12,7 +12,7 @@ REACT_APP_APOLLO_URL=/api
 
 They can be provided with a [.env file](https://github.com/motdotla/dotenv).
 
-## Changelog
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
