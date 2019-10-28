@@ -1,0 +1,24 @@
+{
+  "name": "lorauna-api",
+  "version": "1.1.1",
+  "description": "Graphql backend for the lorauna web application.",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "author": "Janik von Rotz (https://janikvonrotz.ch)",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-micro": "^2.5.0",
+    "dotenv": "^6.2.0",
+    "graphql": "^14.0.2",
+    "micro-cors": "^0.1.1",
+    "mongo": "./lib/mongo",
+    "mongodb": "^3.1.10"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0",
+    "nodemon": "^1.18.10"
+  }
+}
