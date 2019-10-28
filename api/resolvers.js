@@ -145,7 +145,7 @@ const resolvers = {
 
           // delete  all entries older than 1 day
           let deletionDate = new Date((new Date()).getTime() - (24*60*60*1000))
-          temperatureColl.deleteMany({created: {$lt: deletionDate}})
+          // temperatureColl.deleteMany({created: {$lt: deletionDate}})
 
           // get the referenced sauna
           let filter = { _id: ObjectId(args.sauna_id) }
