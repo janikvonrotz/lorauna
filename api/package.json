@@ -15,10 +15,9 @@
     "graphql": "^14.0.2",
     "micro-cors": "^0.1.1",
     "mongo": "./lib/mongo",
-    "mongodb": "^3.1.10"
+    "mongodb": "^3.5.2"
   },
   "devDependencies": {
-    "micro-dev": "^3.0.0",
-    "nodemon": "^1.18.10"
+    "micro-dev": "^3.0.0"
   }
 }

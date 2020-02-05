@@ -1,33 +1,7 @@
 {
   "name": "lorauna",
   "version": "1.0.0",
-  "dependencies": {
-    "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.2",
-    "apollo-boost": "^0.1.23",
-    "chart.js": "^2.7.3",
-    "graphql": "^14.0.2",
-    "react": "^16.7.0",
-    "react-apollo": "^2.3.3",
-    "react-chartkick": "^0.3.0",
-    "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5"
-  },
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "now-build": "react-scripts build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "dev": "now dev"
+  }
 }

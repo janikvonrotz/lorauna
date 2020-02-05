@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "alias": "lorauna.now.sh",
     "env": {
       "MONGODB_URI": "@lorauna_mongodb_uri"
     },
@@ -14,8 +13,8 @@
         "src": "api/index.js", 
         "use": "@now/node"
       },
-      { 
-        "src": "package.json",
+      {
+        "src": "app/package.json",
         "use": "@now/static-build",
         "config": { "distDir": "build" }
       }
@@ -25,24 +24,25 @@
         "src": "/api",
         "dest": "api/index.js"
       },
-      { 
-        "src": "^/static/(.*)", 
+      {
+        "src": "/static/(.*)",
         "headers": { "cache-control": "s-maxage=31536000,immutable" },
-        "dest": "/static/$1"
+        "dest": "app/static/$1"
       },
-      { 
-        "src": "^/favicon.ico", 
-        "dest": "/favicon.ico"
+      { "src": "/favicon.(.*)", "dest": "app/favicon.$1" },
+      { "src": "/asset-manifest.json", "dest": "app/asset-manifest.json" },
+      { "src": "/manifest.json", "dest": "app/manifest.json" },
+      { "src": "/precache-manifest.(.*)", "dest": "app/precache-manifest.$1" },
+      {
+        "src": "/service-worker.js",
+        "headers": { "cache-control": "s-maxage=0" },
+        "dest": "app/service-worker.js"
       },
-      { 
-        "src": "^/asset-manifest.json",
-        "dest": "/asset-manifest.json"
-      },
-      { 
-        "src": "^/manifest.json",
-        "dest": "/manifest.json" },
-      { "src": "^/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
-      { "src": "^/service-worker.js", "headers": { "cache-control": "s-maxage=0" }, "dest": "/service-worker.js" },
-      { "src": "^/(.*)", "headers": {"cache-control": "s-maxage=0"}, "dest": "/index.html" }
+      { "src": "/sockjs-node/(.*)", "dest": "app/sockjs-node/$1" },
+      {
+        "src": "/(.*)",
+        "headers": { "cache-control": "s-maxage=0" },
+        "dest": "app/index.html"
+      }
     ]
-}
+  }
