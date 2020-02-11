@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import AppRouter from './components/AppRouter'
-import Apollo from './components/Apollo'
-import Theme from './components/Theme'
+import React from 'react'
+import AppRouter from './AppRouter'
+import Apollo from './Apollo'
+import Theme from './Theme'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import FlexboxGrid from './FlexboxGrid'
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <Apollo>
-                        <Theme>
-                            <AppRouter />
-                        </Theme>
-                    </Apollo>
-                </header>
-            </div>
-        )
-    }
+function App () {
+  return (
+    <Apollo>
+      <FlexboxGrid>
+        <CssBaseline>
+          <Theme>
+            <AppRouter />
+          </Theme>
+        </CssBaseline>
+      </FlexboxGrid>
+    </Apollo>
+  )
 }
 
 export default App

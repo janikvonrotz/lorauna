@@ -24,7 +24,7 @@ mutation updateCapacityMessage($id: String!, $message: String, $percentage: Int)
 `
 
 export {
-    CREATE_VISITOR,
-    UPDATE_SAUNA,
-    UPDATE_CAPACITY_MESSAGE,
+  CREATE_VISITOR,
+  UPDATE_SAUNA,
+  UPDATE_CAPACITY_MESSAGE
 }
