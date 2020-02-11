@@ -5,19 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "micro",
-    "dev": "micro-dev"
+    "dev": "micro-dev",
+    "lint": "standard"
   },
   "author": "Janik von Rotz (https://janikvonrotz.ch)",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-micro": "^2.5.0",
-    "dotenv": "^6.2.0",
-    "graphql": "^14.0.2",
+    "@apland/mongo": "^1.0.3",
+    "apollo-server-micro": "^2.10.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.6.0",
     "micro-cors": "^0.1.1",
-    "mongo": "./lib/mongo",
     "mongodb": "^3.5.2"
   },
   "devDependencies": {
-    "micro-dev": "^3.0.0"
+    "micro-dev": "^3.0.0",
+    "standard": "^14.3.1"
   }
 }

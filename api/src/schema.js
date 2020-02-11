@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-micro')
 const typeDefs = gql`
 
 scalar Date
-	
+
 type Response {
     success: Boolean
     message: String
