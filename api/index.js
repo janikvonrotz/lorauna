@@ -1,21 +1,29 @@
 const cors = require('micro-cors')()
 const { ApolloServer } = require('apollo-server-micro')
 const { typeDefs } = require('./src/schema')
-const { resolvers } = require('./src/resolvers')
+const resolvers = require('./src/resolvers')
+const { merge } = require('lodash')
+const resolversVisitor = require('./src/resolvers-visitor')
+
+// Load environment configuration
+require('dotenv').config()
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
+  resolvers: merge(
+    resolvers,
+    resolversVisitor
+  ),
   introspection: true,
-  playground: true,
-  formatError: error => {
-    console.log(error)
-    return error
-  },
-  formatResponse: response => {
-    console.log(response)
-    return response
-  }
+  playground: true
+  // formatError: error => {
+  //   console.log(error)
+  //   return error
+  // },
+  // formatResponse: response => {
+  //   console.log(response)
+  //   return response
+  // }
 })
 
 module.exports = cors((req, res) => {

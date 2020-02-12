@@ -4,6 +4,7 @@ import { ALL_TEMPERATURES } from './queries'
 import Error from './Error'
 import Loading from './Loading'
 import { LineChart } from 'react-chartkick'
+import 'chart.js'
 
 const TemperatureList = () => (
   <Query query={ALL_TEMPERATURES}>
@@ -19,19 +20,19 @@ const TemperatureList = () => (
         return null
       })
 
-      const options = {
-        scales: {
-          yAxes: [{
-            stacked: true,
-            ticks: {
-              stepSize: 10
-            }
-          }]
-        }
-      }
-
       return (
-        <LineChart data={chartData} library={options} />
+        <LineChart
+          data={chartData}
+          library={{
+            scales: {
+              yAxes: [{
+                ticks: {
+                  stepSize: 10
+                }
+              }]
+            }
+          }}
+        />
       )
     }}
   </Query>

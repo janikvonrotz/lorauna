@@ -24,6 +24,7 @@
 ## Feature
 
 - [ ] -1 Knopf hinzufügen
+- [x] Add +/-5 button
 - [ ] Erfassen Sauna sprüche
 
 ## API
@@ -37,6 +38,7 @@
 
 ## Bug
 
+- [x] Chart ticks not shown -> Do not upgrade chart.js and react-chartkick
 - [x] Benachrichtigung ändern
 
 ## Minor

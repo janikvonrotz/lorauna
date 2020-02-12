@@ -15,6 +15,14 @@ mutation updateSauna($id: String!, $name: String, $max_seats: Int) {
 }
 `
 
+const CLOSE_SAUNA = gql`
+mutation closeSauna($id: String!) {
+    closeSauna(id: $id) {
+        success
+    }
+}
+`
+
 const UPDATE_CAPACITY_MESSAGE = gql`
 mutation updateCapacityMessage($id: String!, $message: String, $percentage: Int) {
     updateCapacityMessage(id: $id, message: $message, percentage: $percentage) {
@@ -26,5 +34,6 @@ mutation updateCapacityMessage($id: String!, $message: String, $percentage: Int)
 export {
   CREATE_VISITOR,
   UPDATE_SAUNA,
-  UPDATE_CAPACITY_MESSAGE
+  UPDATE_CAPACITY_MESSAGE,
+  CLOSE_SAUNA
 }

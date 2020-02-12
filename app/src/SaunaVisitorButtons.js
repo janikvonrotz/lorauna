@@ -4,10 +4,9 @@ import Button from '@material-ui/core/Button'
 import PropTypes from 'prop-types'
 import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
-import { Mutation } from 'react-apollo'
 import { ALL_SAUNAS } from './queries'
 import { CREATE_VISITOR } from './mutations'
-import { ObjectId } from './helpers'
+import { useMutation } from '@apollo/react-hooks'
 
 const styles = theme => ({
   button: {
@@ -15,66 +14,62 @@ const styles = theme => ({
   }
 })
 
-const SaunaVisitorButtons = ({ sauna, classes }) => (
-  <div>
-    <Mutation
-      mutation={CREATE_VISITOR}
-      variables={{ value: -1, sauna_id: sauna._id }}
-      refetchQueries={[{ query: ALL_SAUNAS }]}
-    >
+const SaunaVisitorButtons = ({ sauna, classes }) => {
 
-      {(createVisitor, { data, error, client }) => {
-        if (error) {
-          client.writeData({ data: { notification: error.message, notification_id: ObjectId() } })
-        }
+  const [createVisitor, { error }] = useMutation(CREATE_VISITOR, {
+    refetchQueries: [{
+      query: ALL_SAUNAS
+    }]
+  })
 
-        if (data) {
-          client.writeData({ data: { notification: 'Besucher entfernt', notification_id: ObjectId() } })
-        }
+  // if (loading) return 'Loading...'
+  if (error) return `Error! ${error.message}`
 
-        return (
-          <Button
-            variant='contained'
-            color='secondary'
-            aria-label='Entfernen'
-            className={classes.button}
-            onClick={() => createVisitor()}
-          >
-            <RemoveIcon fontSize='small' />
-          </Button>
-        )
-      }}
-    </Mutation>
-    <Mutation
-      mutation={CREATE_VISITOR}
-      variables={{ value: 1, sauna_id: sauna._id }}
-      refetchQueries={[{ query: ALL_SAUNAS }]}
-    >
+  // client.writeData({ data: { notification: error.message, notification_id: ObjectId() } })
+  // client.writeData({ data: { notification: 'Besucher entfernt', notification_id: ObjectId() } })
 
-      {(createVisitor, { data, error, client }) => {
-        if (error) {
-          client.writeData({ data: { notification: error.message, notification_id: ObjectId() } })
-        }
-
-        if (data) {
-          client.writeData({ data: { notification: 'Besucher hinzugefügt', notification_id: ObjectId() } })
-        }
-
-        return (
-          <Button
-            variant='contained'
-            color='primary'
-            aria-label='Hinzufügen'
-            className={classes.button}
-            onClick={() => createVisitor()}
-          >
-            <AddIcon fontSize='small' />
-          </Button>
-        )
-      }}
-    </Mutation>
-  </div>
-)
+  return (
+    <>
+      <Button
+        variant='contained'
+        color='secondary'
+        aria-label='Entfernen'
+        className={classes.button}
+        onClick={() => createVisitor({ variables: { value: -1, sauna_id: sauna._id } })}
+      >
+        <RemoveIcon fontSize='small' />
+      </Button>
+      <Button
+        variant='contained'
+        color='primary'
+        aria-label='Hinzufügen'
+        className={classes.button}
+        onClick={() => createVisitor({ variables: { value: 1, sauna_id: sauna._id } })}
+      >
+        <AddIcon fontSize='small' />
+      </Button>
+      <br />
+      <Button
+        variant='contained'
+        color='secondary'
+        aria-label='Entfernen'
+        className={classes.button}
+        onClick={() => createVisitor({ variables: { value: -5, sauna_id: sauna._id } })}
+      >
+        -5
+      </Button>
+      <Button
+        variant='contained'
+        color='primary'
+        aria-label='Hinzufügen'
+        className={classes.button}
+        onClick={() => createVisitor({ variables: { value: 5, sauna_id: sauna._id } })}
+      >
+        +5
+      </Button>
+    </>
+  )
+}
 
 SaunaVisitorButtons.propTypes = {
   sauna: PropTypes.object.isRequired,
