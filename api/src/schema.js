@@ -43,6 +43,13 @@ type Visitor {
     current_seats: Int
 }
 
+type Quote {
+    _id: String
+    created: Date
+    quote: String
+    author: String
+}
+
 type Query {
     allSaunas: [Sauna]
     sauna(id: String): Sauna
@@ -50,6 +57,7 @@ type Query {
     allVisitors(limit: Int): [Visitor]
     allCapacityMessages: [CapacityMessage]
     capacityMessage(id: String): CapacityMessage
+    allQuotes: [Quote]
 }
 
 type Mutation {
@@ -64,7 +72,11 @@ type Mutation {
     createTemperature(value: Float, sauna_id: String): Temperature
 
     createVisitor(value: Int, sauna_id: String): Visitor
+
+    createQuote(quote: String, author: String): Quote
+    updateQuote(id: String, quote: String, author: String): Response
+    deleteQuote(id: String): Response
 }
 `
 
-module.exports = { typeDefs }
+module.exports = typeDefs

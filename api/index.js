@@ -1,8 +1,12 @@
 const cors = require('micro-cors')()
 const { ApolloServer } = require('apollo-server-micro')
-const { typeDefs } = require('./src/schema')
-const resolvers = require('./src/resolvers')
+const typeDefs = require('./src/schema')
 const { merge } = require('lodash')
+const resolvers = require('./src/resolvers')
+const resolversCapacityMessage = require('./src/resolvers-capacity_message')
+const resolversQuote = require('./src/resolvers-quote')
+const resolversSauna = require('./src/resolvers-sauna')
+const resolversTemperature = require('./src/resolvers-temperature')
 const resolversVisitor = require('./src/resolvers-visitor')
 
 // Load environment configuration
@@ -12,18 +16,14 @@ const server = new ApolloServer({
   typeDefs,
   resolvers: merge(
     resolvers,
+    resolversCapacityMessage,
+    resolversQuote,
+    resolversSauna,
+    resolversTemperature,
     resolversVisitor
   ),
   introspection: true,
   playground: true
-  // formatError: error => {
-  //   console.log(error)
-  //   return error
-  // },
-  // formatResponse: response => {
-  //   console.log(response)
-  //   return response
-  // }
 })
 
 module.exports = cors((req, res) => {
