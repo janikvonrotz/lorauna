@@ -14,16 +14,7 @@ import ToysIcon from '@material-ui/icons/Toys'
 import HistoryIcon from '@material-ui/icons/History'
 import SettingsIcon from '@material-ui/icons/Settings'
 import InfoIcon from '@material-ui/icons/Info'
-import PaperSheet from './PaperSheet'
-import About from './About'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Settings from './Settings'
-import Sauna from './Sauna'
-import Saunas from './Saunas'
-import Visitors from './Visitors'
-import CapacityMessage from './CapacityMessage'
-// import Notification from './Notification'
-import Temperatures from './Temperatures'
+import Link from 'react-router-dom/Link'
 
 class AppRouter extends React.Component {
 
@@ -39,8 +30,7 @@ class AppRouter extends React.Component {
   render() {
 
     return (
-      <Router>
-        {/* <Notification /> */}
+      <>
         <AppBar position='static'>
           <Toolbar>
             <IconButton color='inherit' aria-label='Menu' onClick={this.toggleDrawer}>
@@ -82,12 +72,20 @@ class AppRouter extends React.Component {
               <ListItemText>Temperaturen</ListItemText>
             </MenuItem>
           </Link>
-          <Link to='/settings'>
+          <Link to='/capacity_messages'>
             <MenuItem onClick={this.toggleDrawer}>
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>
-              <ListItemText>Einstellungen</ListItemText>
+              <ListItemText>Kapazitätsmeldungen</ListItemText>
+            </MenuItem>
+          </Link>
+          <Link to='/quotes'>
+            <MenuItem onClick={this.toggleDrawer}>
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText>Sprüche</ListItemText>
             </MenuItem>
           </Link>
           <Link to='/about'>
@@ -99,17 +97,7 @@ class AppRouter extends React.Component {
             </MenuItem>
           </Link>
         </Drawer>
-        <PaperSheet>
-          <Route exact path='/' component={Saunas} />
-          <Route path='/saunas' component={Saunas} />
-          <Route path='/sauna/:id' component={Sauna} />
-          <Route path='/visitors' component={Visitors} />
-          <Route path='/temperatures' component={Temperatures} />
-          <Route path='/about' component={About} />
-          <Route path='/settings' component={Settings} />
-          <Route path='/capacity_message/:id' component={CapacityMessage} />
-        </PaperSheet>
-      </Router>
+      </>
     )
   }
 }

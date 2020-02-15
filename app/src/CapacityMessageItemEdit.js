@@ -7,10 +7,10 @@ import { CAPACITY_MESSAGE, ALL_CAPACITY_MESSAGES } from './queries'
 import { withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { Link } from 'react-router-dom'
+import Link from 'react-router-dom/Link'
 import { UPDATE_CAPACITY_MESSAGE } from './mutations'
 import { Mutation } from 'react-apollo'
-import { ObjectId } from './helpers';
+import { ObjectId } from './helpers'
 
 const styles = theme => ({
   textField: {
@@ -22,7 +22,7 @@ const styles = theme => ({
   }
 })
 
-const CapacityMessageEditContainer = ({ id, classes }) => (
+const CapacityMessageItemEditContainer = ({ id, classes }) => (
   <Query variables={{ id }} query={CAPACITY_MESSAGE}>
     {({ loading, error, data }) => {
 
@@ -30,13 +30,13 @@ const CapacityMessageEditContainer = ({ id, classes }) => (
       if (error) return <Error />
 
       return (
-        <CapacityMessageEdit capacityMessage={data.capacityMessage} classes={classes} />
+        <CapacityMessageItemEdit capacityMessage={data.capacityMessage} classes={classes} />
       )
     }}
   </Query>
 )
 
-class CapacityMessageEdit extends React.Component {
+class CapacityMessageItemEdit extends React.Component {
 
   state = this.props.capacityMessage
 
@@ -73,7 +73,7 @@ class CapacityMessageEdit extends React.Component {
             }
 
             return (
-              <Link to='/settings'>
+              <Link to='/capacity_messages'>
                 <Button
                   variant='contained'
                   color='primary' className={classes.button}
@@ -85,7 +85,7 @@ class CapacityMessageEdit extends React.Component {
             )
           }}
         </Mutation>
-        <Link to='/settings'>
+        <Link to='/capacity_messages'>
           <Button variant='contained' color='secondary' className={classes.button}>
             Abbrechen
           </Button>
@@ -95,4 +95,4 @@ class CapacityMessageEdit extends React.Component {
   }
 }
 
-export default withStyles(styles)(CapacityMessageEditContainer)
+export default withStyles(styles)(CapacityMessageItemEditContainer)

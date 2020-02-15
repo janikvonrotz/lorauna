@@ -8,6 +8,7 @@ query capacityMessage($id: String) {
     }
 }
 `
+
 const ALL_CAPACITY_MESSAGES = gql`
 {
     allCapacityMessages{
@@ -17,6 +18,7 @@ const ALL_CAPACITY_MESSAGES = gql`
     }
 }
 `
+
 const SAUNA = gql`
 query sauna($id: String) {
     sauna(id: $id) {
@@ -26,6 +28,7 @@ query sauna($id: String) {
     }
 }
 `
+
 const ALL_SAUNAS = gql`
 {
     allSaunas {
@@ -37,6 +40,7 @@ const ALL_SAUNAS = gql`
     }
 }
 `
+
 const ALL_VISITORS = gql`
 query allVisitors($limit: Int) {
     allVisitors(limit: $limit) {
@@ -50,6 +54,7 @@ query allVisitors($limit: Int) {
     }
 }
 `
+
 const ALL_TEMPERATURES = gql`
 query allTemperatures($limit: Int) {
     allTemperatures(limit: $limit) {
@@ -62,6 +67,17 @@ query allTemperatures($limit: Int) {
     }
 }
 `
+
+const ALL_QUOTES = gql`
+query allQuotes {
+    allQuotes {
+        _id
+        quote
+        author
+    }
+}
+`
+
 const NOTIFICATION = gql`
 {
     notification @client
@@ -76,5 +92,6 @@ export {
   ALL_SAUNAS,
   ALL_VISITORS,
   NOTIFICATION,
-  ALL_TEMPERATURES
+  ALL_TEMPERATURES,
+  ALL_QUOTES
 }

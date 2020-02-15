@@ -31,9 +31,27 @@ mutation updateCapacityMessage($id: String!, $message: String, $percentage: Int)
 }
 `
 
+const UPDATE_QUOTE = gql`
+mutation updateQuote($id: String!, $quote: String!, $author: String) {
+    updateQuote(id: $id, quote: $quote, author: $author) {
+        success
+    }
+}
+`
+
+const DELETE_QUOTE = gql`
+mutation deleteQuote($id: String!) {
+    deleteQuote(id: $id) {
+        success
+    }
+}
+`
+
 export {
   CREATE_VISITOR,
   UPDATE_SAUNA,
   UPDATE_CAPACITY_MESSAGE,
-  CLOSE_SAUNA
+  CLOSE_SAUNA,
+  UPDATE_QUOTE,
+  DELETE_QUOTE
 }
