@@ -39,6 +39,7 @@
 
 ## Bug
 
+- [ ] Quote update does not close when saved or canceled
 - [x] Chart ticks not shown -> Do not upgrade chart.js and react-chartkick
 - [x] Benachrichtigung ändern
 

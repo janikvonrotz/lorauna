@@ -46,7 +46,7 @@ const QuoteList = () => {
 
   return (
     <>
-      {openUpdate && (<QuoteUpdate quote={quoteUpdate} onClose={toggleUpdate} />)}
+      {openUpdate && (<QuoteUpdate quote={quoteUpdate} handleClose={toggleUpdate} />)}
       {openDelete && (<QuoteDelete open={openDelete} quote={quoteDelete} handleClose={toggleDelete} />)}
       <Table className={classes.table}>
         <TableHead>
