@@ -1,8 +1,8 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import { ALL_TEMPERATURES } from './queries'
-import Error from './Error'
-import Loading from './Loading'
+import { ALL_TEMPERATURES } from '../queries'
+import Error from '../Error'
+import Loading from '../Loading'
 import { LineChart } from 'react-chartkick'
 import 'chart.js'
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import Error from './Error'
-import Loading from './Loading'
-import { ALL_VISITORS } from './queries'
+import Error from '../Error'
+import Loading from '../Loading'
+import { ALL_VISITORS } from '../queries'
 import { LineChart } from 'react-chartkick'
 
 const VisitorList = () => (

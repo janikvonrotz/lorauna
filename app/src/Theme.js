@@ -3,8 +3,13 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import 'typeface-roboto'
 
 const theme = createMuiTheme({
-  typography: {
-    useNextVariants: true
+  palette: {
+    primary: {
+      main: '#007A81'
+    },
+    secondary: {
+      main: '#000'
+    }
   }
 })
 

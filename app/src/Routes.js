@@ -1,14 +1,14 @@
 import React from 'react'
 import About from './About'
 import Route from 'react-router-dom/Route'
-import CapacityMessage from './CapacityMessage'
-import Sauna from './Sauna'
-import Saunas from './Saunas'
-import Visitors from './Visitors'
-import CapacityMessageItem from './CapacityMessageItem'
-import Temperatures from './Temperatures'
+import CapacityMessage from './CapacityMessage/CapacityMessage'
+import Sauna from './Sauna/Sauna'
+import Saunas from './Sauna/Saunas'
+import Visitors from './Visitor/Visitors'
+import CapacityMessageItem from './CapacityMessage/CapacityMessageItem'
+import Temperatures from './Temperature/Temperatures'
 import PaperSheet from './PaperSheet'
-import Quotes from './Quotes'
+import Quotes from './Quote/Quotes'
 
 const Routes = () =>
   <PaperSheet>

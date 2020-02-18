@@ -4,8 +4,8 @@ import Button from '@material-ui/core/Button'
 import PropTypes from 'prop-types'
 import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
-import { ALL_SAUNAS } from './queries'
-import { CREATE_VISITOR } from './mutations'
+import { ALL_SAUNAS } from '../queries'
+import { CREATE_VISITOR } from '../mutations'
 import { useMutation } from '@apollo/react-hooks'
 
 const styles = theme => ({

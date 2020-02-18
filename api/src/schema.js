@@ -74,8 +74,8 @@ type Mutation {
     createVisitor(value: Int, sauna_id: String): Visitor
 
     createQuote(quote: String, author: String): Quote
-    updateQuote(id: String, quote: String, author: String): Response
-    deleteQuote(id: String): Response
+    updateQuote(_id: String, quote: String, author: String): Response
+    deleteQuote(_id: String): Response
 }
 `
 

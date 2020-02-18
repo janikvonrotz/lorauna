@@ -1,12 +1,12 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import Error from './Error'
-import Loading from './Loading'
+import Error from '../Error'
+import Loading from '../Loading'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import { Link } from 'react-router-dom'
-import { ALL_CAPACITY_MESSAGES } from './queries'
+import { ALL_CAPACITY_MESSAGES } from '../queries'
 
 const CapacityMessagesList = () => (
   <Query query={ALL_CAPACITY_MESSAGES}>

@@ -8,4 +8,5 @@
 | 2020- | 17:00 | 18:20 | Bug in Temperatur Diagramm beheben |
 | 2020-02-15 | 08:15 | 08:58 | Added quote type to schema |
 | 2020-02-16 | 00:00 | 00:40 | Implement quote resolver and setup proper route management for app |
-| 2020- |  |  |  |
+| 2020-02-18 | 11:00 | 12:15 | Update header, color theme and add quote management |
+| 2020-02-18 | 15:00 | 16:40 | Finish quote management |

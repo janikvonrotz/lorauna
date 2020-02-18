@@ -78,6 +78,44 @@ query allQuotes {
 }
 `
 
+const CREATE_QUOTE = gql`
+mutation createQuote(
+    $quote: String
+    $author: String
+) {
+    createQuote(
+        quote: $quote
+        author: $author
+    ) {
+        _id
+    }
+}
+`
+
+const UPDATE_QUOTE = gql`
+mutation updateQuote(
+    $_id: String
+    $quote: String
+    $author: String
+) {
+    updateQuote(
+        _id: $_id
+        quote: $quote
+        author: $author
+    ) {
+        success
+    }
+}
+`
+
+const DELETE_QUOTE = gql`
+mutation deleteQuote($_id: String) {
+    deleteQuote(_id: $_id) {
+        success
+    }
+}
+`
+
 const NOTIFICATION = gql`
 {
     notification @client
@@ -93,5 +131,8 @@ export {
   ALL_VISITORS,
   NOTIFICATION,
   ALL_TEMPERATURES,
-  ALL_QUOTES
+  ALL_QUOTES,
+  CREATE_QUOTE,
+  UPDATE_QUOTE,
+  DELETE_QUOTE
 }

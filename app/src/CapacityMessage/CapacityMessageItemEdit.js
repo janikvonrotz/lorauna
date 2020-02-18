@@ -1,16 +1,16 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 import Typography from '@material-ui/core/Typography'
-import Error from './Error'
-import Loading from './Loading'
-import { CAPACITY_MESSAGE, ALL_CAPACITY_MESSAGES } from './queries'
+import Error from '../Error'
+import Loading from '../Loading'
+import { CAPACITY_MESSAGE, ALL_CAPACITY_MESSAGES } from '../queries'
 import { withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Link from 'react-router-dom/Link'
-import { UPDATE_CAPACITY_MESSAGE } from './mutations'
+import { UPDATE_CAPACITY_MESSAGE } from '../mutations'
 import { Mutation } from 'react-apollo'
-import { ObjectId } from './helpers'
+import { ObjectId } from '../helpers'
 
 const styles = theme => ({
   textField: {

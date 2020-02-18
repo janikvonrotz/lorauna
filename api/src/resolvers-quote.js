@@ -16,15 +16,14 @@ const resolvers = {
     },
     updateQuote: async (root, args, context) => {
       args.updated = new Date()
-      const filter = { _id: ObjectId(args.id) }
-      delete args.id
+      const filter = { _id: ObjectId(args._id) }
+      delete args._id
       const res = await (await collection('quote')).updateOne(filter, { $set: args })
       return { success: res.result.ok }
     },
     deleteQuote: async (root, args, context) => {
-      if (args.id) {
-        args._id = ObjectId(args.id)
-        delete args.id
+      if (args._id) {
+        args._id = ObjectId(args._id)
       }
       const res = await (await collection('quote')).deleteOne(args)
       return { success: res.result.ok }

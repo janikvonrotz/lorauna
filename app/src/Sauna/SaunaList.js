@@ -1,9 +1,9 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 import SaunaListItem from './SaunaListItem'
-import Error from './Error'
-import Loading from './Loading'
-import { ALL_SAUNAS } from './queries'
+import Error from '../Error'
+import Loading from '../Loading'
+import { ALL_SAUNAS } from '../queries'
 
 const SaunaList = () => (
   <Query query={ALL_SAUNAS}>

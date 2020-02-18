@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import FlexboxGrid from './FlexboxGrid'
 import Router from 'react-router-dom/BrowserRouter'
 import Routes from './Routes'
-import Header from './Header'
+import Header from './Header/Header'
 
 function App () {
   return (

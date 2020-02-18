@@ -26,7 +26,7 @@
 - [ ] Enable waiting list -> Show besucher 31/31 Warteliste: 12
 - [ ] -1 Knopf hinzufügen
 - [x] Add +/-5 button
-- [ ] Erfassen Sauna sprüche
+- [x] Erfassen Sauna sprüche
 
 ## API
 
@@ -44,7 +44,7 @@
 
 ## Minor
 
-- [ ] Refactor navigation - copy from labtrail
+- [x] Refactor navigation - copy from labtrail
 - [ ] Configure Logging
     https://www.apollographql.com/docs/apollo-server/features/metrics.html
 - [-] Configure Apollo Engine
