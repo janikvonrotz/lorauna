@@ -25,8 +25,13 @@ const SaunaListItem = ({ sauna, classes }) => (
       </Typography>
     </Link>
     <Typography variant='body1' gutterBottom>
-      Auslastung: {sauna.current_seats}/{sauna.max_seats}
+      Auslastung: {sauna.current_seats > sauna.max_seats ? sauna.max_seats : sauna.current_seats}/{sauna.max_seats}
     </Typography>
+    {sauna.current_seats > sauna.max_seats ? (
+      <Typography variant='body1' gutterBottom>
+        <strong>Warteliste: {sauna.current_seats - sauna.max_seats}</strong>
+      </Typography>
+    ) : null}
     <Typography variant='body1' gutterBottom>
       Statusnachricht: {sauna.capacity_message}
     </Typography>

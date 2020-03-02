@@ -11,3 +11,4 @@
 | 2020-02-18 | 11:00 | 12:15 | Update header, color theme and add quote management |
 | 2020-02-18 | 15:00 | 16:40 | Finish quote management |
 | 2020-02-18 | 17:50 | 18:00 | Fix error |
+| 2020-03-02 | 17:00 | 17:45 | Added waiting list, updated about page and reactored some components |

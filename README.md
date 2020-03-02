@@ -1,6 +1,8 @@
-# lorauna
+# Lorauna
 
-React web application with a graphql backend.
+Lorauna is a web application for the administration of a sauna landscape. The association Sauna Lorrainebad runs several saunas in the Lorrainebad Bern during winter. The app is used to register visitors' entrances and exits and to record temperatures in the sauna.
+
+<img width="500px" src="./assets/screenshot.png" alt="Screenshot" />
 
 ## Env config
 

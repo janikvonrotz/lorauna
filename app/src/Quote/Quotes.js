@@ -7,6 +7,9 @@ import QuoteCreate from './QuoteCreate'
 import { useToggle } from '../hooks'
 
 const useStyles = makeStyles(theme => ({
+  title: {
+    margin: theme.spacing(2, 0)
+  },
   button: {
     margin: theme.spacing(1, 1, 1, 0)
   }
@@ -19,7 +22,7 @@ const Quotes = () => {
 
   return (
     <>
-      <Typography variant='h3' gutterBottom>
+      <Typography variant='h3' gutterBottom className={classes.title}>
         Sprüche
       </Typography>
       <Typography variant='body1' gutterBottom>

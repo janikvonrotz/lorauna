@@ -11,22 +11,16 @@
 
 ## Business
 
-- [x] Write offer for new features
+- [ ] Send bill for materiald, worklog and IoT data
 
 ## Major
 
-- [x] Refactor api code
-- [x] Refactor components from LabTrail
 - [ ] Fix delete old temperature entries
 - [ ] Update data viz with week, month, season view
-- [x] Send bill
 
 ## Feature
 
-- [ ] Enable waiting list -> Show besucher 31/31 Warteliste: 12
 - [ ] -1 Knopf hinzufügen
-- [x] Add +/-5 button
-- [x] Erfassen Sauna sprüche
 
 ## API
 
@@ -37,26 +31,37 @@
 - [ ] Neuer Sensor bauen
 - [ ] Integration neue Sauna
 
-## Bug
+## Design
 
-- [ ] Quote update does not close when saved or canceled
-- [x] Chart ticks not shown -> Do not upgrade chart.js and react-chartkick
-- [x] Benachrichtigung ändern
+- [ ] Set header margin for edit views
+
+## Bug
 
 ## Minor
 
-- [x] Refactor navigation - copy from labtrail
+- [ ] Replace divs with fragments
 - [ ] Configure Logging
     https://www.apollographql.com/docs/apollo-server/features/metrics.html
+
+# Done
+
+- [x] Write offer for new features
+- [x] Refactor api code
+- [x] Refactor components from LabTrail
+- [x] Send bill
+- [x] Enable waiting list -> Show besucher 31/31 Warteliste: 12
+- [x] Add +/-5 button
+- [x] Erfassen Sauna sprüche
+- [x] Quote update does not close when saved or canceled
+- [x] Chart ticks not shown -> Do not upgrade chart.js and react-chartkick
+- [x] Benachrichtigung ändern
+- [x] Refactor navigation - copy from labtrail
 - [-] Configure Apollo Engine
     https://engine.apollographql.com/account/gh.janikvonrotz/new/lorauna-api?previousUrl=%2Faccount%2Fgh.janikvonrotz%2Fservices
 - [-] Restrict access to api with jwt token in header
     https://blog.apollographql.com/authorization-in-graphql-452b1c402a9
 - [-] Fix menu offset
 - [x] Auto scale input fields
-
-# Done
-
 - [x] Merge into mono repo lorauna/{app,api}
 - [x] deploy lorauna-api with now 2.0
 - [x] Bug: Enable routes in now.json

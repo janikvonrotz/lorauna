@@ -22,9 +22,9 @@ const resolvers = {
       if (sauna.current_seats < -1) {
         throw new UserInputError('Die Anzahl Besucher darf nicht kleiner als -1 sein.')
       }
-      if (sauna.current_seats > sauna.max_seats) {
-        throw new UserInputError('Die Anzahl Besucher hat die maximal zulässige Anzahl überschritten.')
-      }
+      // if (sauna.current_seats > sauna.max_seats) {
+      //   throw new UserInputError('Die Anzahl Besucher hat die maximal zulässige Anzahl überschritten.')
+      // }
 
       let res = await (await collection('sauna')).updateOne(filter, { $set: sauna })
 
