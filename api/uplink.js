@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
   const response = await fetch(`${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}/api`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query: `mutation { createTemperature(value: "${temperatureValue}", sauna_id: "${saunaId}") { _id, created } }` })
+    body: JSON.stringify({ query: `mutation { createTemperature(value: ${temperatureValue}, sauna_id: "${saunaId}") { _id, created } }` })
   })
   const text = await response.text()
   const json = JSON.parse(text)
