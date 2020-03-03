@@ -15,3 +15,4 @@
 | 2020-03-03 | 09:00 | 10:15 | Arduino Nachrichten via LoRa Netzwerk verschicken und an Lorauna API weiterleiten |
 | 2020-03-03 | 14:10 | 16:35 | Wire and setup Arduino Temperature Sensor |
 | 2020-03-03 | 17:30 | 18:15 | Add Aare temperature and Sauna Lorrainebad News to Lorauna API |
+| 2020-03-03 | 21:15 | 22:00 | Add second sauna entry for temperature |

@@ -12,11 +12,12 @@ const SaunaList = () => (
       if (error) return <Error />
 
       return (
-        <div>
-          {data.allSaunas.map((sauna) => (
+        <>
+          {/* {data.allSaunas.map((sauna) => (
             <SaunaListItem key={sauna._id} sauna={sauna} />
-          ))}
-        </div>
+          ))} */}
+          <SaunaListItem key={data.allSaunas[0]._id} sauna={data.allSaunas[0]} />
+        </>
       )
     }}
   </Query>

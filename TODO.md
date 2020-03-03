@@ -40,6 +40,7 @@
 
 ## Minor
 
+- [ ] Separate Sauna and Sauna Landscape
 - [ ] Replace divs with fragments
 - [ ] Configure Logging
     https://www.apollographql.com/docs/apollo-server/features/metrics.html
