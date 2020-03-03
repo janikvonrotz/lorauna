@@ -13,6 +13,10 @@
         "src": "api/index.js", 
         "use": "@now/node"
       },
+      { 
+        "src": "api/uplink.js", 
+        "use": "@now/node"
+      },
       {
         "src": "app/package.json",
         "use": "@now/static-build",
@@ -20,6 +24,10 @@
       }
     ],
     "routes": [
+      {
+        "src": "/api/uplink",
+        "dest": "api/uplink.js"
+      },
       {
         "src": "/api",
         "dest": "api/index.js"
