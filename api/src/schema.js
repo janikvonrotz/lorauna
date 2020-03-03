@@ -35,6 +35,19 @@ type Temperature {
     sauna: Sauna
 }
 
+type AareTemperature {
+    value: Float
+    quote: String
+} 
+
+type NewsItem {
+    _id: String
+    title: String
+    link: String
+    date: Date
+}
+
+
 type Visitor {
     _id: String
     created: Date
@@ -51,12 +64,20 @@ type Quote {
 }
 
 type Query {
+    aareTemperature: AareTemperature
+
+    allNews: [NewsItem]
+
     allSaunas: [Sauna]
     sauna(id: String): Sauna
+
     allTemperatures(limit: Int): [Temperature]
+
     allVisitors(limit: Int): [Visitor]
+
     allCapacityMessages: [CapacityMessage]
     capacityMessage(id: String): CapacityMessage
+
     allQuotes: [Quote]
 }
 

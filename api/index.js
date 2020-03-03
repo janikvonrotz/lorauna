@@ -8,6 +8,8 @@ const resolversQuote = require('./src/resolvers-quote')
 const resolversSauna = require('./src/resolvers-sauna')
 const resolversTemperature = require('./src/resolvers-temperature')
 const resolversVisitor = require('./src/resolvers-visitor')
+const resolversNews = require('./src/resolvers-news')
+const resolsersAareTemperature = require('./src/resolvers-aare_temperature')
 
 // Load environment configuration
 require('dotenv').config()
@@ -20,7 +22,9 @@ const server = new ApolloServer({
     resolversQuote,
     resolversSauna,
     resolversTemperature,
-    resolversVisitor
+    resolversVisitor,
+    resolversNews,
+    resolsersAareTemperature
   ),
   introspection: true,
   playground: true

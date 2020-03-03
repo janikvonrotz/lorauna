@@ -12,3 +12,6 @@
 | 2020-02-18 | 15:00 | 16:40 | Finish quote management |
 | 2020-02-18 | 17:50 | 18:00 | Fix error |
 | 2020-03-02 | 17:00 | 17:45 | Added waiting list, updated about page and reactored some components |
+| 2020-03-03 | 09:00 | 10:15 | Arduino Nachrichten via LoRa Netzwerk verschicken und an Lorauna API weiterleiten |
+| 2020-03-03 | 14:10 | 16:35 | Wire and setup Arduino Temperature Sensor |
+| 2020-03-03 | 17:30 | 18:15 | Add Aare temperature and Sauna Lorrainebad News to Lorauna API |

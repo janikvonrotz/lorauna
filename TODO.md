@@ -11,7 +11,7 @@
 
 ## Business
 
-- [ ] Send bill for materiald, worklog and IoT data
+- [ ] Send bill for materiald, worklog and IoT data (27.-/h)
 
 ## Major
 
@@ -20,11 +20,12 @@
 
 ## Feature
 
+- [ ] Swipe to refetch temperatures
 - [ ] -1 Knopf hinzufügen
 
 ## API
 
-- [ ] Integration Temperatur abfrage Aaare
+- [x] Integration Temperatur abfrage Aaare
 
 ## Sensor
 
