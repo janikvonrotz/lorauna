@@ -15,6 +15,8 @@
 
 ## Major
 
+- [ ] Add Home page with new feature
+- [ ] Filter temperature by Sauna
 - [ ] Fix delete old temperature entries
 - [ ] Update data viz with week, month, season view
 
@@ -40,6 +42,7 @@
 
 ## Minor
 
+- [ ] Do not filter temperature hardcoded
 - [ ] Separate Sauna and Sauna Landscape
 - [ ] Replace divs with fragments
 - [ ] Configure Logging

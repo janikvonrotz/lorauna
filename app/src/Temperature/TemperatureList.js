@@ -5,6 +5,7 @@ import Error from '../Error'
 import Loading from '../Loading'
 import { LineChart } from 'react-chartkick'
 import 'chart.js'
+import { groupBy } from '../helpers'
 
 const TemperatureList = () => (
   <Query query={ALL_TEMPERATURES}>
@@ -12,9 +13,12 @@ const TemperatureList = () => (
       if (loading) return <Loading />
       if (error) return <Error />
 
+      // Group data
+      const temperature = groupBy(data.allTemperatures, 'sauna.name')
+
       // create chart data set
       const chartData = {}
-      data.allTemperatures.map((temperature) => {
+      temperature['Auslastung Sauna Lorrainebad'].map((temperature) => {
         const date = new Date(Date.parse(temperature.created))
         chartData[date.toLocaleTimeString()] = temperature.value
         return null
