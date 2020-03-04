@@ -14,7 +14,9 @@ void setup() {
   
   // Setup and initalization
   Serial.begin(115200);
-  while (!Serial);
+  // Wait for serial boot
+  // while (!Serial);
+  delay(1000);
   // Start sensors
   sensors.begin();
   Serial.println("Welcome to MKRWAN1300");
@@ -39,7 +41,7 @@ void setup() {
     while (1) {}
   }
   // Wait for modem
-  delay(5000);
+  delay(3000);
   Serial.println("DONE");
 }
 
