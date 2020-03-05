@@ -2,11 +2,11 @@
 
 ## App
 
-- [ ] New project lorauna-app
-- [ ] React native initialisieren
-- [ ] Logo vektorisieren
-- [ ] Gestaltung festlegen
-- [ ] Implementation Graphql client
+- [-] New project lorauna-app
+- [x] React native initialisieren
+- [x] Logo vektorisieren
+- [x] Gestaltung festlegen
+- [x] Implementation Graphql client
 - [ ] Publikation
 
 ## Business
@@ -15,8 +15,8 @@
 
 ## Major
 
-- [ ] Add Home page with new feature
-- [ ] Filter temperature by Sauna
+- [-] Add Home page with new feature
+- [x] Filter temperature by Sauna
 - [ ] Fix delete old temperature entries
 - [ ] Update data viz with week, month, season view
 
