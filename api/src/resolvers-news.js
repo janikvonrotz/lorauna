@@ -7,6 +7,7 @@ const resolvers = {
       const text = await response.text()
       const json = JSON.parse(text)
       return json.map(item => {
+        item._id = item.id
         item.title = item.title.rendered
         item.date = new Date(item.date)
         return item
