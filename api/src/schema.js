@@ -79,6 +79,7 @@ type Query {
     capacityMessage(id: String): CapacityMessage
 
     allQuotes: [Quote]
+    dailyQuote: Quote
 }
 
 type Mutation {

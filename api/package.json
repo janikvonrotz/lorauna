@@ -1,6 +1,6 @@
 {
   "name": "lorauna-api",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Graphql backend for the lorauna web application.",
   "main": "index.js",
   "scripts": {

@@ -1,22 +1,11 @@
 # TODO
 
-## App
-
-- [-] New project lorauna-app
-- [x] React native initialisieren
-- [x] Logo vektorisieren
-- [x] Gestaltung festlegen
-- [x] Implementation Graphql client
-- [ ] Publikation
-
 ## Business
 
 - [ ] Send bill for materiald, worklog and IoT data (27.-/h)
 
 ## Major
 
-- [-] Add Home page with new feature
-- [x] Filter temperature by Sauna
 - [ ] Fix delete old temperature entries
 - [ ] Update data viz with week, month, season view
 
@@ -26,8 +15,6 @@
 - [ ] -1 Knopf hinzufügen
 
 ## API
-
-- [x] Integration Temperatur abfrage Aaare
 
 ## Sensor
 
@@ -50,6 +37,16 @@
 
 # Done
 
+- [-] New project lorauna-app
+- [x] React native initialisieren
+- [x] Logo vektorisieren
+- [x] Gestaltung festlegen
+- [x] Implementation Graphql client
+- [-] Publikation
+- [x] Add daily quote
+- [x] Integration Temperatur abfrage Aaare
+- [-] Add Home page with new feature
+- [x] Filter temperature by Sauna
 - [x] Write offer for new features
 - [x] Refactor api code
 - [x] Refactor components from LabTrail
