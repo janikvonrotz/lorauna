@@ -1,0 +1,6 @@
+version: "3"
+services:
+  database:
+    image: mongo:4.2.2
+    volumes:
+      - $PWD:/scripts
