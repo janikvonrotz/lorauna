@@ -13,7 +13,7 @@ const Saunas = () => {
   const classes = useStyles()
 
   return (
-    <div>
+    <>
       <Typography variant='h3' gutterBottom className={classes.title}>
         Saunas
       </Typography>
@@ -21,7 +21,7 @@ const Saunas = () => {
         Verwaltung der Saunalandschaften.
       </Typography>
       <SaunaList />
-    </div>
+    </>
   )
 }
 

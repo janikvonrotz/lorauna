@@ -13,7 +13,7 @@ const Visitors = () => {
   const classes = useStyles()
 
   return (
-    <div>
+    <>
       <Typography variant='h3' gutterBottom className={classes.title}>
         Besucher
       </Typography>
@@ -21,7 +21,7 @@ const Visitors = () => {
         Visualisierung der neusten Besucherzahlen.
       </Typography>
       <VisitorList />
-    </div>
+    </>
   )
 }
 

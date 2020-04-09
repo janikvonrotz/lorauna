@@ -17,13 +17,19 @@ const TemperatureList = () => (
       const temperature = groupBy(data.allTemperatures, 'sauna.name')
 
       // create chart data set
-      const chartData = {}
-      temperature['Auslastung Sauna Lorrainebad'].map((temperature) => {
-        const date = new Date(Date.parse(temperature.created))
-        chartData[date.toLocaleTimeString()] = temperature.value
-        return null
+      const chartData = []
+      Object.keys(temperature).map((key) => {
+        const dataEntry = {
+          name: key,
+          data: {}
+        }
+        temperature[key].map((temperature) => {
+          const date = new Date(Date.parse(temperature.created))
+          dataEntry.data[date.toLocaleTimeString()] = temperature.value
+        })
+        chartData.push(dataEntry)
       })
-
+      
       return (
         <LineChart
           data={chartData}

@@ -14,7 +14,7 @@ const styles = theme => ({
 })
 
 const SaunaListItem = ({ sauna, classes }) => (
-  <div>
+  <>
     <Divider light className={classes.divider} />
     <Typography variant='h4'>
       {sauna.name}
@@ -39,7 +39,7 @@ const SaunaListItem = ({ sauna, classes }) => (
       Ein- und Ausgang der Besucher registrieren:
     </Typography>
     <SaunaVisitorButtons sauna={sauna} />
-  </div>
+  </>
 )
 
 SaunaListItem.propTypes = {

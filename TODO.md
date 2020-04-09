@@ -2,6 +2,7 @@
 
 ## Business
 
+- [ ] Neuer Sensor bauen
 - [ ] Send bill for materiald, worklog and IoT data (27.-/h)
   Mouser Hardware
   IoT Bills
@@ -16,31 +17,21 @@
 ## Feature
 
 - [ ] Swipe to refetch temperatures
-- [ ] -1 Knopf hinzufügen
-
-## API
-
-## Sensor
-
-- [ ] Neuer Sensor bauen
-- [ ] Integration neue Sauna
-
-## Design
-
-- [ ] Set header margin for edit views
-
-## Bug
 
 ## Minor
 
 - [ ] Do not filter temperature hardcoded
 - [ ] Separate Sauna and Sauna Landscape
-- [ ] Replace divs with fragments
-- [ ] Configure Logging
-    https://www.apollographql.com/docs/apollo-server/features/metrics.html
 
 # Done
 
+- [x] Integration neue Sauna
+- [-] Set header margin for edit views
+- [x] Show edit buttons of quotes in one line
+- [-] Configure Logging
+    https://www.apollographql.com/docs/apollo-server/features/metrics.html
+- [x] Replace divs with fragments
+- [-] -1 Knopf hinzufügen
 - [-] New project lorauna-app
 - [x] React native initialisieren
 - [x] Logo vektorisieren

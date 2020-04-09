@@ -14,7 +14,7 @@ const Temperatures = () => {
 
   return (
 
-    <div>
+    <>
       <Typography variant='h3' gutterBottom className={classes.title}>
         Temperaturen
       </Typography>
@@ -22,7 +22,7 @@ const Temperatures = () => {
         Übersicht der Sauna Temperaturen.
       </Typography>
       <TemperatureList />
-    </div>
+    </>
   )
 }
 

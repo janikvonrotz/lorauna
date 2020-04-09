@@ -19,6 +19,9 @@ import QuoteUpdate from './QuoteUpdate'
 const useStyles = makeStyles(theme => ({
   table: {
     minWidth: 300
+  },
+  actionCell: {
+    minWidth: 128
   }
 }))
 
@@ -71,7 +74,7 @@ const QuoteList = () => {
               <TableCell>
                 {quote.author}
               </TableCell>
-              <TableCell>
+              <TableCell className={classes.actionCell}>
                 <IconButton
                   aria-label='Bearbeiten'
                   color='primary'
