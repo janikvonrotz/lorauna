@@ -35,11 +35,11 @@ void setup() {
   Serial.println(modem.deviceEUI());
   
   // Set APP EUI
-  appEui = "70B3D57ED002964F";
+  appEui = "";
   appEui.trim();
 
   // Set APP KEY
-  appKey = "9ADC0D85D8440E6EE0DCB528519BE38A";
+  appKey = "";
   appKey.trim();
 
   // Connect to network via OTAA

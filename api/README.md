@@ -10,7 +10,7 @@ Running the application requires the following environment variables:
 MONGO_URL=mongodb://username:password@hostname.com:port/database
 ```
 
-They can be provided with a [.env file](https://github.com/motdotla/dotenv).
+They can be provided with an [.env file](https://github.com/motdotla/dotenv).
 
 # Changelog
 
