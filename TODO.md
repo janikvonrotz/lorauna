@@ -3,7 +3,7 @@
 ## Business
 
 - [ ] Neuer Sensor bauen
-- [ ] Send bill for materiald, worklog and IoT data (27.-/h)
+- [x] Send bill for materild, worklog and IoT data (27.-/h)
   Mouser Hardware
   IoT Bills
   Calculate Worklog hours
