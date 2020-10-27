@@ -26,24 +26,6 @@ TARGET_DATABASE_USERNAME="USERNAME"
 TARGET_DATABASE_PASSWORD="PASSWORD"
 ```
 
-## The Things Network
-
-Confgiuration for TTN integration.
-
-### Payload Formats
-
-Decode hex message
-
-```js
-function Decoder(bytes, port) {
- var result = "";
- for (var i = 0; i < bytes.length; i++) {
-   result += String.fromCharCode(parseInt(bytes[i]));
- }
- return { payload: result };
-}
-```
-
-## Wordpress
+## Wordpress Integration
 
 Use the `wordpress-script.js` script for website integration of the Lorauna API.
