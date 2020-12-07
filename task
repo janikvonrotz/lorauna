@@ -1,0 +1,37 @@
+#!/bin/sh
+set -euo pipefail
+
+# load env vars
+if [ -f .env ]
+then
+  export $(cat .env | sed 's/#.*//g' | xargs)
+fi
+
+function help() {
+echo
+echo "$1 <command> [options]"
+echo
+echo "commands:"
+echo
+column -t -s"|" ./task.md | tail -n +3
+echo
+}
+
+function install() {
+    npm install
+}
+
+case "$1" in
+    install)
+        install
+        ;;
+    dump)
+        . ./scripts/mongo-dump
+        ;;
+    restore)
+        ./scripts/mongo-restore
+        ;;
+    *)
+        help task
+        exit 1
+esac

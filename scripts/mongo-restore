@@ -1,0 +1,12 @@
+#!/bin/zsh
+set -euo pipefail
+
+SOURCE_DATABASENAME=${SOURCE_DATABASE_URI##*/}
+TARGET_DATABASENAME=${TARGET_DATABASE_URI##*/}
+echo "Restore source database: $TARGET_DATABASENAME ? [y/N]"
+read response
+
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+then
+    mongorestore --uri=$TARGET_DATABASE_URI ./.dump
+fi

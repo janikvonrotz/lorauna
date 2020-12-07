@@ -1,0 +1,11 @@
+#!/bin/zsh
+set -euo pipefail
+
+SOURCE_DATABASENAME=${SOURCE_DATABASE_URI##*/}
+echo "Dump source database: $SOURCE_DATABASENAME ? [y/N]"
+read response
+
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+then
+    mongodump --uri=$SOURCE_DATABASE_URI --out ./.dump
+fi

@@ -29,7 +29,7 @@ const TemperatureList = () => (
         })
         chartData.push(dataEntry)
       })
-      
+
       return (
         <LineChart
           data={chartData}

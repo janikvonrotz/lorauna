@@ -4,8 +4,15 @@ module.exports = async (req, res) => {
   // Log request
   console.log(JSON.stringify(req.body, null, 2))
 
-  const saunaId = '5e5ebf1d9e960b00086f46f0'
-  const temperatureValue = req.body.payload_fields.payload.split(': ')[1]
+  let saunaId = ''
+  if (req.body.dev_id === 'device1') {
+    saunaId = '5bce139792a5f41e7aa6382b'
+  }
+  if (req.body.dev_id === 'device2') {
+    saunaId = '5e5ebf1d9e960b00086f46f0'
+  }
+
+  const temperatureValue = req.body.payload_fields.TempC1
 
   const response = await fetch(`${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}/api`, {
     method: 'POST',
