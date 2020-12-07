@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - New uplink integration
-- Migrate databse
+- Migrate database
 ## [1.0.0] - 2019-10-28
 ### Added
 - The lorauna-api project has been integrated into this repository.
