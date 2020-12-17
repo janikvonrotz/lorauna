@@ -31,18 +31,32 @@ const TemperatureList = () => (
       })
 
       return (
-        <LineChart
-          data={chartData}
-          library={{
-            scales: {
-              yAxes: [{
-                ticks: {
-                  stepSize: 10
-                }
-              }]
-            }
-          }}
-        />
+        <>
+          <LineChart
+            data={[chartData[1]]}
+            library={{
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    stepSize: 10
+                  }
+                }]
+              }
+            }}
+          />
+          <LineChart
+            data={[chartData[0]]}
+            library={{
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    stepSize: 10
+                  }
+                }]
+              }
+            }}
+          />
+        </>
       )
     }}
   </Query>
