@@ -1,8 +1,5 @@
 {
   "name": "lorauna",
   "version": "1.0.0",
-  "scripts": {
-    "dev": "now dev"
-  },
-  "dependencies": {}
+  "license": "MIT"
 }

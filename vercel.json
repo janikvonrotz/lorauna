@@ -1,8 +1,5 @@
 {
     "version": 2,
-    "env": {
-      "MONGODB_URI": "@lorauna_mongodb_uri"
-    },
     "build": {
       "env": {
         "REACT_APP_APOLLO_URL": "/api"
