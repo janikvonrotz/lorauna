@@ -4,7 +4,7 @@ var elTemperature = document.getElementsByClassName('Lorauna-Temperatur')[0];
 var elAareTemperature = document.getElementsByClassName('Aare-Temperatur')[0];
 var elAirTemperature = document.getElementsByClassName('Luft-Temperatur')[0];
 
-fetch('https://lorauna.now.sh/api', {
+fetch('https://lorauna.app/api', {
     method: 'post',
     headers: {
         'Accept': 'application/json, text/plain, */*',
