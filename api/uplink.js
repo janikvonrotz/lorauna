@@ -5,10 +5,10 @@ module.exports = async (req, res) => {
   console.log(JSON.stringify(req.body, null, 2))
 
   let saunaId = ''
-  if (req.body.dev_id === 'device1') {
+  if (req.body.end_device_ids.device_id == 'eui-a8404189f18318de') {
     saunaId = '5bce139792a5f41e7aa6382b'
   }
-  if (req.body.dev_id === 'device2') {
+  if (req.body.end_device_ids.device_id == 'device2') {
     saunaId = '5e5ebf1d9e960b00086f46f0'
   }
 
