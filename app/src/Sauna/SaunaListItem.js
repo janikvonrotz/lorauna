@@ -16,14 +16,14 @@ const styles = theme => ({
 const SaunaListItem = ({ sauna, classes }) => (
   <>
     <Divider light className={classes.divider} />
-    <Typography variant='h4'>
+    {/* <Typography variant='h4'>
       {sauna.name}
     </Typography>
     <Link to={`/sauna/${sauna._id}`}>
       <Typography variant='body1' gutterBottom>
         Bearbeiten
       </Typography>
-    </Link>
+    </Link> */}
     <Typography variant='body1' gutterBottom>
       Auslastung: {sauna.current_seats > sauna.max_seats ? sauna.max_seats : sauna.current_seats}/{sauna.max_seats}
     </Typography>
