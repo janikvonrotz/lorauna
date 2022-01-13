@@ -15,10 +15,10 @@ const Saunas = () => {
   return (
     <>
       <Typography variant='h3' gutterBottom className={classes.title}>
-        Saunas
+        Sauna Lorrainebad
       </Typography>
       <Typography variant='body1' gutterBottom>
-        Verwaltung der Saunalandschaften.
+        Verwaltung der Saunalandschaft.
       </Typography>
       <SaunaList />
     </>
