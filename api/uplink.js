@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     saunaId = '5e5ebf1d9e960b00086f46f0'
   }
 
-  const temperatureValue = req.body.uplink_message.decoded_payload.TempC_SHT
+  const temperatureValue = req.body.uplink_message.decoded_payload.TempC_DS
 
   const response = await fetch(`${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}/api`, {
     method: 'POST',
